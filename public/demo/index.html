@@ -38,51 +38,71 @@
     </div>
   </main>
 
-  <!-- Demonstration stage. Content is interpreted from atlas_demo.yaml. -->
+  <!--
+    INT-DEMO-UX-003 — vertical document architecture (CSS Grid zones):
+    Scene Header → Narrative → Canvas → Metrics → Evidence → Footer
+    IDs preserved for demo.js. No narrative/content changes.
+  -->
   <section id="demo-stage" class="demo-stage" hidden aria-label="CONRRAD institutional demonstration" aria-live="polite">
     <div class="demo-stage-inner">
-      <header class="demo-stage-head">
-        <div>
-          <p id="demo-kicker" class="demo-kicker">CONRRAD · Institutional Demonstration</p>
-          <h2 id="demo-brand" class="demo-brand">AI Only Where It Adds Value</h2>
-          <p class="demo-entity-line">Citizen = Institutional Digital Entity · Always alive</p>
+
+      <header class="demo-zone demo-zone--chrome">
+        <div class="demo-stage-head">
+          <div>
+            <p id="demo-kicker" class="demo-kicker">CONRRAD · Institutional Demonstration</p>
+            <h2 id="demo-brand" class="demo-brand">AI Only Where It Adds Value</h2>
+            <p class="demo-entity-line">Citizen = Institutional Digital Entity · Always alive</p>
+          </div>
+          <button type="button" id="demo-close" class="demo-close" aria-label="Close demonstration">Close</button>
         </div>
-        <button type="button" id="demo-close" class="demo-close" aria-label="Close demonstration">Close</button>
       </header>
 
-      <div class="demo-scene-head">
-        <h3 id="demo-scene-title" class="demo-scene-title"></h3>
-        <p id="demo-scene-subtitle" class="demo-scene-subtitle"></p>
-      </div>
-
-      <!-- INT-CITIZEN-011-A: reading order — text before visuals -->
-      <div class="demo-message-block">
-        <p id="demo-message" class="demo-msg-main"></p>
-        <p id="demo-submessage" class="demo-msg-sub"></p>
-        <p id="demo-negative" class="demo-msg-negative" hidden></p>
-        <p id="demo-closing" class="demo-msg-closing" hidden></p>
-      </div>
-
-      <p id="demo-hero" class="demo-hero" hidden></p>
-      <div id="demo-canvas" class="demo-canvas"></div>
-      <p id="demo-reveal" class="demo-reveal" hidden></p>
-      <p id="demo-note" class="demo-note" hidden></p>
-
-      <div id="demo-metrics" class="demo-metrics"></div>
-      <div id="demo-pain" class="demo-pain"></div>
-      <div id="demo-triad" class="demo-triad"></div>
-
-      <footer class="demo-stage-foot">
-        <div class="demo-progress"><span id="demo-progress-bar"></span></div>
-        <div id="demo-rail" class="demo-rail" aria-label="Scenes"></div>
-        <div class="demo-controls">
-          <button type="button" id="demo-prev">Previous</button>
-          <button type="button" id="demo-pause" aria-pressed="false">Pause</button>
-          <button type="button" id="demo-next">Next</button>
-          <button type="button" id="demo-replay">Replay</button>
+      <div class="demo-zone demo-zone--scene">
+        <div class="demo-scene-head">
+          <h3 id="demo-scene-title" class="demo-scene-title"></h3>
+          <p id="demo-scene-subtitle" class="demo-scene-subtitle"></p>
         </div>
-        <p id="demo-principal" class="demo-principal">CONRRAD uses AI only where the institution cannot answer by itself.</p>
+      </div>
+
+      <div class="demo-zone demo-zone--narrative">
+        <div class="demo-message-block">
+          <p id="demo-message" class="demo-msg-main"></p>
+          <p id="demo-submessage" class="demo-msg-sub"></p>
+          <p id="demo-negative" class="demo-msg-negative" hidden></p>
+          <p id="demo-closing" class="demo-msg-closing" hidden></p>
+        </div>
+        <p id="demo-hero" class="demo-hero" hidden></p>
+        <p id="demo-note" class="demo-note" hidden></p>
+      </div>
+
+      <div class="demo-zone demo-zone--canvas">
+        <div id="demo-canvas" class="demo-canvas" role="img" aria-label="Scene visualization"></div>
+        <p id="demo-reveal" class="demo-reveal" hidden></p>
+      </div>
+
+      <div class="demo-zone demo-zone--metrics">
+        <div id="demo-metrics" class="demo-metrics" aria-live="polite"></div>
+      </div>
+
+      <div class="demo-zone demo-zone--evidence">
+        <div id="demo-pain" class="demo-pain"></div>
+        <div id="demo-triad" class="demo-triad"></div>
+      </div>
+
+      <footer class="demo-zone demo-zone--footer">
+        <div class="demo-stage-foot">
+          <div class="demo-progress"><span id="demo-progress-bar"></span></div>
+          <div id="demo-rail" class="demo-rail" aria-label="Scenes"></div>
+          <div class="demo-controls">
+            <button type="button" id="demo-prev">Previous</button>
+            <button type="button" id="demo-pause" aria-pressed="false">Pause</button>
+            <button type="button" id="demo-next">Next</button>
+            <button type="button" id="demo-replay">Replay</button>
+          </div>
+          <p id="demo-principal" class="demo-principal">CONRRAD uses AI only where the institution cannot answer by itself.</p>
+        </div>
       </footer>
+
     </div>
   </section>
 

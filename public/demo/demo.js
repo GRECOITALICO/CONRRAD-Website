@@ -135,10 +135,14 @@
     items = items.slice(0, 3);
     if (!items.length) {
       box.innerHTML = "";
-      box.hidden = true;
+      box.hidden = false;
+      box.classList.add("is-empty");
+      box.setAttribute("aria-hidden", "true");
       return;
     }
     box.hidden = false;
+    box.classList.remove("is-empty");
+    box.removeAttribute("aria-hidden");
     box.innerHTML = items
       .map(function (m, i) {
         return (
@@ -936,7 +940,14 @@
       );
     }
     box.innerHTML = blocks.join("");
-    box.hidden = !blocks.length;
+    box.hidden = false;
+    if (!blocks.length) {
+      box.classList.add("is-empty");
+      box.setAttribute("aria-hidden", "true");
+    } else {
+      box.classList.remove("is-empty");
+      box.removeAttribute("aria-hidden");
+    }
   }
 
   /** A scene may withhold a name until the outcome has been understood. */
