@@ -1,0 +1,129 @@
+/* CONRRAD institutional product chrome — shared by Home (via SiteChrome), Atlas, Demo.
+   INT-ATLAS-025-A. Presentation only.
+   INT-CITIZEN-009-A: shared chrome height token for Demo offset. */
+
+:root {
+  --eco-chrome-h-light: 3.5rem;
+  --eco-chrome-h-dark: 2.5rem;
+}
+
+.eco-chrome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--eco-chrome-h-light);
+  padding: 0 1.1rem;
+  border-bottom: 1px solid rgba(18, 32, 51, 0.12);
+  background: rgba(244, 249, 252, 0.96);
+  backdrop-filter: blur(6px);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #122033;
+}
+
+.eco-chrome a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.eco-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.eco-logo img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.eco-wordmark {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 1.05rem;
+}
+
+.eco-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5a6d82;
+}
+
+.eco-nav a:hover {
+  color: #122033;
+}
+
+.eco-nav a[aria-current="page"] {
+  color: #087a8c;
+  border-bottom: 2px solid #087a8c;
+  padding-bottom: 0.15rem;
+}
+
+/* Dark / Demo variant — compact so the first viewport keeps scene content */
+.eco-chrome.eco-chrome--dark {
+  height: var(--eco-chrome-h-dark);
+  padding: 0 1rem;
+  background: rgba(6, 18, 26, 0.92);
+  border-bottom-color: rgba(232, 244, 248, 0.12);
+  color: #e8f4f8;
+}
+
+.eco-chrome.eco-chrome--dark .eco-logo img {
+  width: 18px;
+  height: 18px;
+}
+
+.eco-chrome.eco-chrome--dark .eco-wordmark {
+  font-size: 0.95rem;
+}
+
+.eco-chrome.eco-chrome--dark .eco-nav {
+  color: #9fb6c4;
+  gap: 0.7rem;
+  font-size: 0.62rem;
+}
+
+.eco-chrome.eco-chrome--dark .eco-nav a:hover {
+  color: #e8f4f8;
+}
+
+.eco-chrome.eco-chrome--dark .eco-nav a[aria-current="page"] {
+  color: #6fb6c6;
+  border-bottom-color: #6fb6c6;
+}
+
+body.has-eco-chrome {
+  padding-top: var(--eco-chrome-h-light);
+}
+
+/* Demo: chrome offset matches the compact dark bar (not the Home/Atlas light bar). */
+body.has-eco-chrome.eco-demo {
+  padding-top: var(--eco-chrome-h-dark);
+}
+
+@media (max-width: 520px) {
+  .eco-wordmark { font-size: 0.95rem; }
+  .eco-nav { gap: 0.55rem; font-size: 0.62rem; }
+  .eco-chrome {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: var(--eco-chrome-h-dark);
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+  }
+  body.has-eco-chrome.eco-demo {
+    padding-top: 3.25rem; /* wrapped dark chrome */
+  }
+}

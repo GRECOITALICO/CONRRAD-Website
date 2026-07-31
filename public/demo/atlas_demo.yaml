@@ -1,0 +1,786 @@
+schema: conrrad.atlas.demo/v1
+version: 3.0.0
+wo: WO-ATLAS-012
+
+# CONRRAD Atlas — Business Outcome Demonstration (declarative)
+# WO-ATLAS-012 · "Institution First. AI Second."
+#
+# The frontend ONLY interprets this file. No scene, message, metric, animation
+# or ordering is hardcoded in JavaScript.
+#
+# Narrative principle:
+#   This demo does NOT explain components.
+#   This demo demonstrates BUSINESS TRANSFORMATION.
+#   An investor does not buy components. An investor buys risk elimination.
+#
+# Each scene answers exactly ONE institutional property:
+#
+#   Scene 1 → The enterprise depends on AI. That is the problem.
+#   Scene 2 → The identity belongs to the institution, not the provider.
+#   Scene 3 → The institution decides when it needs AI.
+#   Scene 4 → The institution buys capabilities, not models.
+#   Scene 5 → AI never has institutional authority.
+#   Scene 6 → Every decision leaves verifiable evidence.
+#   Scene 7 → The institution reduces AI usage over time.
+#   Final   → The institution is governed, auditable, and sovereign.
+#
+# Mandatory triad per scene:
+#   business_impact · architecture_property · institutional_evidence
+id: ATLAS_BUSINESS_OUTCOME_DEMO
+title: Institution First. AI Second.
+kicker: CONRRAD · Business Proof
+start_label: "▶ Start Institutional Demonstration"
+thesis: Your institution survives even if every AI provider disappears.
+principal_message: CONRRAD does not sell better AI. CONRRAD reduces your dependency on AI.
+
+controls:
+  - play
+  - pause
+  - next
+  - previous
+  - replay
+
+budget:
+  max_total_ms: 120000
+  planned_total_ms: 116000
+
+metrics_binding:
+  source: atlas.json
+  path: institutional_health
+
+counters:
+  # Economic baseline
+  requests_total: 25
+  traditional_ai_calls: 25
+  traditional_inference_pct: 100
+  traditional_governance: 0
+  traditional_audit_trail: 0
+  traditional_continuity: 0
+  traditional_cost_usd: 3.00
+  cost_per_call_usd: 0.12
+  # CONRRAD actuals
+  institution_resolved: 23
+  inference_required: 2
+  institution_resolved_pct: 92
+  inference_required_pct: 8
+  conrrad_ai_calls: 2
+  conrrad_cost_usd: 0.24
+  savings_pct: 92
+  answers_free_forever: 23
+  # Capability routing
+  capabilities_local: 7
+  capabilities_cloud: 2
+  local_execution_pct: 78
+  # Authority
+  decisions_made_by_ai: 0
+  proposals_by_ai: 2
+  proposals_approved: 1
+  proposals_rejected: 1
+  # Knowledge evolution
+  inference_calls_first_request: 1
+  inference_calls_second_request: 0
+  marginal_cost_second_request: 0
+  # Identity
+  entry_points: 6
+  providers_rotated: 4
+  identity_changes: 0
+  session_continuity_pct: 100
+  # Validation
+  policies_applied: 12
+  evidence_artifacts: 41
+  unapproved_changes: 0
+
+# Non-institutional actors. Present only as demonstration overlay.
+# They hold no institutional authority.
+external_actors:
+  entry_points:
+    - ChatGPT
+    - Claude
+    - WhatsApp
+    - REST API
+    - CLI
+    - Mobile App
+  inference_providers:
+    - ChatGPT
+    - Claude
+    - Gemini
+    - Local LLM
+  inference_engine:
+    label: Inference Provider
+    role: service
+    scale: small
+    forbidden_labels:
+      - Brain
+      - AI Core
+      - Central Intelligence
+      - Engine
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# SCENES
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+scenes:
+
+  # ──────────────────────────────────────────────────────────
+  # SCENE 1: THE COST OF AI DEPENDENCY
+  # Institutional property: NONE. This is the problem.
+  # ──────────────────────────────────────────────────────────
+  - id: SCENE-1
+    order: 1
+    title: The enterprise depends on AI.
+    subtitle: That is the problem.
+    duration_ms: 10000
+    pain: Total dependency on external AI
+    message: Today, every request goes straight to the model.
+    submessage: Nothing filters. Nothing governs. Nothing stays.
+    closing: |-
+      This is how most companies use AI today.
+      Everything depends on the model.
+    business_impact: Unpredictable costs, zero governance, no audit trail, complete vendor dependency, and no institutional memory.
+    architecture_property: No architecture. The LLM is the system of record.
+    institutional_evidence:
+      - This is the industry baseline, not a CONRRAD property
+    camera:
+      mode: stage
+      focus: null
+    model_nodes: []
+    animation:
+      type: dependency_baseline
+      flow:
+        - label: Request
+        - label: LLM
+          role: Everything
+          scale: large
+        - label: Answer
+      warning_counters:
+        - label: Inference
+          value_from: counters.traditional_inference_pct
+          unit: "%"
+          tone: critical
+        - label: Vendor Lock
+          value: "YES"
+          tone: critical
+        - label: Governance
+          value_from: counters.traditional_governance
+          tone: critical
+        - label: Audit Trail
+          value_from: counters.traditional_audit_trail
+          tone: critical
+        - label: Continuity
+          value_from: counters.traditional_continuity
+          tone: critical
+      note: "100% of requests reach AI. 0% are governed. 0% leave evidence."
+    metrics:
+      - label: Inference Dependency
+        value_from: counters.traditional_inference_pct
+        unit: "%"
+        tone: critical
+      - label: Governance
+        value: None
+        tone: critical
+      - label: Audit Trail
+        value: None
+        tone: critical
+      - label: Vendor Independence
+        value: None
+        tone: critical
+    next: SCENE-2
+
+  # ──────────────────────────────────────────────────────────
+  # SCENE 2: THE INSTITUTION RECEIVES THE REQUEST
+  # Institutional property demonstrated:
+  #   The identity belongs to the institution, not the provider.
+  # ──────────────────────────────────────────────────────────
+  - id: SCENE-2
+    order: 2
+    title: The institution receives the request.
+    subtitle: The model does not.
+    duration_ms: 14000
+    pain: Vendor lock-in and loss of identity when providers change
+    hero_text: |-
+      The institution receives the request.
+      The model does not.
+    message: It does not matter where the request comes from.
+    submessage: ChatGPT, Claude, WhatsApp, API, CLI, Mobile — all converge into one institutional authority.
+    closing: |-
+      Providers rotate.
+      Your operation never restarts.
+    institutional_property: The identity belongs to the institution, not the provider.
+    business_impact: Zero migration cost, zero context loss, zero onboarding when any provider changes price, policy, or disappears.
+    architecture_property: Identity, session, and operational state live in the institution — not in any conversation or provider.
+    institutional_evidence:
+      - Six different entry points resolve to one institutional authority (ANNY)
+      - Operational state persists across provider rotation
+      - Institutional state is a durable asset, not a conversation
+    camera:
+      mode: stage
+      focus: anny
+    model_nodes:
+      - founder_login
+      - anny
+      - mission
+      - institutional_state
+    animation:
+      type: converge_with_swap
+      # Phase 1: Convergence
+      sources_from: external_actors.entry_points
+      target: ANNY
+      target_role: Institutional Entry Authority
+      converge_note: Six entry points. One institution answering.
+      # Phase 2: Provider rotation
+      providers_from: external_actors.inference_providers
+      stable_actor: ANNY
+      stable_actor_holds:
+        - Identity
+        - Institutional Session
+        - Mission
+        - Operational State
+        - What was decided
+        - What remains pending
+      swap_interval_ms: 2200
+      swap_note: The provider below changes. Nothing above it changes.
+    metrics:
+      - label: Entry Points
+        value_from: counters.entry_points
+      - label: Providers Rotated
+        value_from: counters.providers_rotated
+      - label: Identity Changes
+        value_from: counters.identity_changes
+        tone: good
+      - label: Session Continuity
+        value_from: counters.session_continuity_pct
+        unit: "%"
+        tone: good
+    next: SCENE-3
+
+  # ──────────────────────────────────────────────────────────
+  # SCENE 3: HARLEMM — THE GOVERNANCE BIFURCATION
+  # Institutional property demonstrated:
+  #   The institution decides when it needs AI.
+  # ──────────────────────────────────────────────────────────
+  - id: SCENE-3
+    order: 3
+    title: The institution decides when it needs AI.
+    subtitle: Not the other way around.
+    duration_ms: 22000
+    principal: true
+    pain: Paying repeatedly for answers you already own
+    hero_text: |-
+      Knowledge reuse grows.
+      Inference demand falls.
+    message: The institution progressively increases knowledge reuse.
+    submessage: As the institution learns, more requests resolve without new inference. Each new capability reduces future inference need.
+    closing: |-
+      Inference demand continuously decreases.
+      Not by promise — by accumulation.
+    institutional_property: The institution decides when it needs AI.
+    business_impact: Cost pressure eases as institutional knowledge compounds. Spend follows learning, not raw usage volume.
+    architecture_property: A governed check precedes inference. Validated knowledge is reused when the institution already owns the answer.
+    institutional_evidence:
+      - Governed check before every inference consideration
+      - Knowledge coverage measured in the live institutional model
+      - Decision trail recorded for every request path
+    camera:
+      mode: stage
+      focus: harlemm
+    model_nodes:
+      - anny
+      - harlemm
+      - evidence
+      - institutional_state
+    animation:
+      type: bifurcation_with_cost
+      gate: HARLEMM
+      gate_role: Cognitive & Memory Governance
+      total_from: counters.requests_total
+      paths:
+        - id: KNOWN
+          label: Already Known
+          outcome: Institutional reuse
+          share_from: counters.institution_resolved_pct
+          count_from: counters.institution_resolved
+          tone: good
+        - id: NEEDS_AI
+          label: Needs AI
+          outcome: Inference considered
+          share_from: counters.inference_required_pct
+          count_from: counters.inference_required
+          tone: warn
+      cost_comparison:
+        columns:
+          - id: TRADITIONAL
+            label: Traditional AI
+            calls_from: counters.traditional_ai_calls
+            cost_from: counters.traditional_cost_usd
+            tone: critical
+          - id: CONRRAD
+            label: CONRRAD
+            calls_from: counters.conrrad_ai_calls
+            cost_from: counters.conrrad_cost_usd
+            tone: good
+        currency: USD
+        saving_from: counters.savings_pct
+        basis: Illustrative trend from the live institutional model — not a contractual operating ratio.
+      note: Every request passes through HARLEMM. Figures below illustrate direction of learning, not a guaranteed ratio.
+    metrics:
+      - label: Requests · illustrative
+        value_from: counters.requests_total
+      - label: Reuse · illustrative
+        value_from: counters.institution_resolved
+        tone: good
+      - label: Inference · illustrative
+        value_from: counters.inference_required
+        tone: warn
+      - label: Spend pressure · illustrative
+        value_from: counters.savings_pct
+        unit: "%"
+        tone: good
+    next: SCENE-4
+
+  # ──────────────────────────────────────────────────────────
+  # SCENE 4: SULLY — CAPABILITIES, NOT MODELS
+  # Institutional property demonstrated:
+  #   The institution buys capabilities, not models.
+  # ──────────────────────────────────────────────────────────
+  - id: SCENE-4
+    order: 4
+    title: The institution buys capabilities.
+    subtitle: Never models.
+    duration_ms: 16000
+    pain: Cloud overspend and loss of control over where work runs
+    hero_text: |-
+      The institution requests a capability.
+      Never a model.
+    message: You buy a capability once and keep it, whatever the market does next.
+    submessage: SULLY routes by what is needed — never by which model is fashionable.
+    closing: |-
+      The need never changes.
+      Only who executes it.
+    institutional_property: The institution buys capabilities, not models.
+    business_impact: Work runs locally by default. Cloud spend becomes the exception. Sensitive work never leaves your perimeter.
+    architecture_property: Requests are routed by required capability, with local execution preferred over remote.
+    institutional_evidence:
+      - Registered capabilities and their execution location
+      - Worker coordination recorded in the institutional model
+      - 78% of all work executed locally
+    camera:
+      mode: stage
+      focus: sully
+    model_nodes:
+      - sully
+      - workers
+      - worker.ide-cursor
+      - worker.antigravity
+    animation:
+      type: capability_routing
+      examples:
+        - id: EXAMPLE-LOCAL
+          need: Translate PDF
+          capability: OCR + Translation
+          search: Local Specialist
+          result: Available
+          execution: Local
+          cloud_required: false
+          tone: good
+        - id: EXAMPLE-CLOUD
+          need: Generate Architecture
+          capability: Advanced Reasoning
+          search: Local Models
+          result: Not Enough
+          execution: Cloud Specialist
+          cloud_required: true
+          return_to: Institution
+          tone: warn
+      lanes:
+        - id: LOCAL
+          label: Local
+          decision: "Available here → Executed here"
+          share_from: counters.capabilities_local
+          tone: good
+        - id: CLOUD
+          label: Cloud
+          decision: "Not available locally → Executed remotely → Back home"
+          share_from: counters.capabilities_cloud
+          tone: warn
+      note: Local first. Remote only when the capability does not exist locally.
+    metrics:
+      - label: Capabilities Kept Local
+        value_from: counters.capabilities_local
+        tone: good
+      - label: Capabilities Sent To Cloud
+        value_from: counters.capabilities_cloud
+        tone: warn
+      - label: Work Executed Locally
+        value_from: counters.local_execution_pct
+        unit: "%"
+        tone: good
+    next: SCENE-5
+
+  # ──────────────────────────────────────────────────────────
+  # SCENE 5: THE MODEL HAS NO AUTHORITY
+  # Institutional property demonstrated:
+  #   AI never has institutional authority.
+  # ──────────────────────────────────────────────────────────
+  - id: SCENE-5
+    order: 5
+    title: The model has no authority.
+    subtitle: It proposes. The institution decides.
+    duration_ms: 13000
+    pain: AI treated as the system of record — unverifiable outputs entering production
+    hero_text: The model has no authority.
+    message: |-
+      The institution validates AI.
+      Never the opposite.
+    submessage: The inference provider returns a candidate. Not a decision.
+    closing: |-
+      Nothing becomes true
+      because a model said so.
+    institutional_property: AI never has institutional authority.
+    business_impact: Every change is defensible in front of an auditor, a regulator, or a customer — because no AI output enters production unvalidated.
+    architecture_property: The LLM produces a candidate mutation. The institution accepts or rejects it through policy and evidence.
+    institutional_evidence:
+      - Zero decisions made by AI
+      - Every proposal goes through institutional validation
+      - Rejected proposals are recorded with rationale
+    camera:
+      mode: stage
+      focus: harlemm
+    model_nodes:
+      - harlemm
+      - commit_mutation
+      - governance
+      - evidence
+      - certification
+    animation:
+      type: authority_contrast
+      # What CONRRAD does
+      conrrad_flow:
+        - label: Proposal
+          model_node: commit_mutation
+          style: provisional
+        - label: Institution
+          model_node: governance
+        - label: Validation
+          model_node: certification
+        - label: Evidence
+          model_node: evidence
+        - label: Knowledge
+          model_node: institutional_state
+          terminal: true
+      # What everyone else does
+      traditional_flow:
+        - label: Prompt
+        - label: Answer
+        - label: Done
+          warning: No validation. No evidence. No governance.
+      inference_provider:
+        from: external_actors.inference_engine
+        visual_scale: small
+        visual_style: provisional
+      note: "CONRRAD: five steps between proposal and reality. Traditional: zero."
+    metrics:
+      - label: Decisions Made By AI
+        value_from: counters.decisions_made_by_ai
+        tone: good
+      - label: Proposals Approved
+        value_from: counters.proposals_approved
+      - label: Proposals Rejected
+        value_from: counters.proposals_rejected
+        tone: good
+      - label: Unapproved Changes
+        value_from: counters.unapproved_changes
+        tone: good
+    next: SCENE-6
+
+  # ──────────────────────────────────────────────────────────
+  # SCENE 6: EVERY DECISION LEAVES EVIDENCE
+  # Institutional property demonstrated:
+  #   Every decision leaves verifiable evidence.
+  # ──────────────────────────────────────────────────────────
+  - id: SCENE-6
+    order: 6
+    title: Every decision leaves evidence.
+    subtitle: Verifiable. Traceable. Auditable.
+    duration_ms: 14000
+    pain: No audit trail for AI-assisted decisions
+    hero_text: |-
+      Evidence. Policy. Signature.
+      Trace. State Transition. Approval.
+    message: Nothing enters the institutional record without evidence.
+    submessage: Each check appears. Each check passes or fails. The trail is permanent.
+    closing: |-
+      An auditor can verify
+      every decision that was ever made.
+    institutional_property: Every decision leaves verifiable evidence.
+    business_impact: Full regulatory compliance. Every AI-assisted decision is defensible, traceable, and reproducible.
+    architecture_property: Proposals require evidence and policy approval before becoming institutional truth. The approval chain is immutable.
+    institutional_evidence:
+      - PASS / FAIL approval gate before every state change
+      - Evidence corpus attached to every approved change
+      - 12 policies applied per transition
+      - 41 evidence artifacts in the institutional record
+    camera:
+      mode: stage
+      focus: certification
+    model_nodes:
+      - commit_mutation
+      - evidence
+      - governance
+      - certification
+      - institutional_state
+    animation:
+      type: evidence_checklist
+      checks:
+        - id: POLICY
+          label: Policy
+          icon: shield
+          model_node: governance
+        - id: EVIDENCE
+          label: Evidence
+          icon: document
+          model_node: evidence
+        - id: SIGNATURE
+          label: Signature
+          icon: key
+          model_node: certification
+        - id: TRACE
+          label: Trace
+          icon: link
+          model_node: evidence
+        - id: STATE_TRANSITION
+          label: State Transition
+          icon: arrow
+          model_node: institutional_state
+        - id: APPROVAL
+          label: Approval
+          icon: check
+          model_node: certification
+          gate: true
+          terminal: true
+      check_interval_ms: 1800
+      note: Six verifiable checks. Every decision. Every time.
+    metrics:
+      - label: Policies Applied
+        value_from: counters.policies_applied
+      - label: Evidence Artifacts
+        value_from: counters.evidence_artifacts
+        tone: good
+      - label: Changes With Evidence
+        value: 100
+        unit: "%"
+        tone: good
+      - label: Unapproved Changes
+        value_from: counters.unapproved_changes
+        tone: good
+    next: SCENE-7
+
+  # ──────────────────────────────────────────────────────────
+  # SCENE 7: THE INSTITUTION GETS CHEAPER OVER TIME
+  # Institutional property demonstrated:
+  #   The institution reduces AI usage over time.
+  # ──────────────────────────────────────────────────────────
+  - id: SCENE-7
+    order: 7
+    title: The institution gets smarter.
+    subtitle: Progressively. Not overnight.
+    duration_ms: 15000
+    pain: Paying repeatedly for the same answer — improvements belong to the vendor
+    hero_text: |-
+      Cloud inference produces telemetry.
+      Telemetry becomes institutional knowledge.
+    message: The institution does not stop using AI overnight. It progressively reduces dependency on external inference by converting validated knowledge into institutional capabilities.
+    submessage: That is the economic flywheel — accumulation, not an automatic switch.
+    closing: |-
+      Institutional capability eventually replaces
+      external inference when appropriate.
+    institutional_property: The institution reduces AI usage over time.
+    business_impact: Validated knowledge compounds inside the organisation. External dependency declines as institutional capability matures — never by a hard overnight cut.
+    architecture_property: Approved inference produces telemetry. Observatory evaluation turns knowledge into capability. Local specialised models appear when the institution is ready — not on the second call.
+    institutional_evidence:
+      - Learning loop visible as Request → Inference → Telemetry → Observatory → Capability
+      - Institutionalized knowledge visible in the living digital twin
+      - Knowledge coverage measured in the live institutional model
+    camera:
+      mode: stage
+      focus: digital_twins
+    model_nodes:
+      - harlemm
+      - evidence
+      - institutional_state
+      - digital_twins
+    animation:
+      type: knowledge_evolution
+      cycles:
+        - id: FIRST
+          label: Learning Cycle
+          steps:
+            - Request
+            - Inference
+            - Telemetry
+            - Observatory
+            - Capability Evaluation
+          inference_calls_from: counters.inference_calls_first_request
+          cost_from: counters.cost_per_call_usd
+          tone: warn
+        - id: SECOND
+          label: Institutional Accumulation
+          steps:
+            - Institutional Capability
+            - Local Specialized Model when ready
+            - Reduced External Dependency
+          inference_calls_from: counters.inference_calls_second_request
+          cost_from: counters.marginal_cost_second_request
+          tone: good
+      counter_transition:
+        label: External Dependency
+        from_value: Higher
+        to_value: Lower
+        transition_label: "→"
+      marginal_cost:
+        label: Learning Direction
+        from_value: Cloud inference
+        to_value: Institutional capability
+        tone: good
+      note: Progressive accumulation. Never an automatic promise that the next execution is local.
+    metrics:
+      - label: Learning cycle · illustrative
+        value_from: counters.inference_calls_first_request
+        tone: warn
+      - label: Accumulation path · illustrative
+        value_from: counters.inference_calls_second_request
+        tone: good
+      - label: Direction
+        value: Cloud → Capability
+        tone: good
+      - label: Ownership
+        value: Institutional
+        tone: good
+    next: SCENE-FINAL
+
+  # ──────────────────────────────────────────────────────────
+  # SCENE FINAL: WHAT YOU ACTUALLY GET
+  # The Atlas appears as PROOF — not as decoration.
+  # ──────────────────────────────────────────────────────────
+  - id: SCENE-FINAL
+    order: 8
+    title: What you actually get.
+    subtitle: Measured, not claimed.
+    duration_ms: 12000
+    final: true
+    pain: Adopting AI without owning the outcome
+    message: Institution First. AI Second.
+    submessage: |-
+      The institution governs AI.
+      AI never governs the institution.
+    closing: |-
+      Every number above is a live projection
+      from the institutional graph behind this screen.
+    institutional_property: The institution is governed, auditable, and sovereign.
+    business_impact: Eight institutional outcomes you keep — independent of any AI provider, any model generation, any market shift.
+    architecture_property: The institution governs AI end to end. The Atlas is the living proof.
+    institutional_evidence:
+      - atlas.json · institutional_health (live data)
+      - ATLAS_TEST_REPORT.md
+      - ATLAS_DEPLOY_CERTIFICATE.md
+    camera:
+      mode: stage
+      focus: conrrad
+    model_nodes:
+      - conrrad
+      - anny
+      - harlemm
+      - sully
+      - governance
+      - evidence
+      - institutional_state
+      - digital_twins
+    animation:
+      type: outcome_board
+      # Phase 1: Institutional properties appear one by one
+      outcomes:
+        - label: Governed
+          detail: Every request checked before anything is spent
+        - label: Auditable
+          detail: Every decision leaves verifiable evidence
+        - label: Traceable
+          detail: Full chain from request to institutional knowledge
+        - label: Vendor Independent
+          detail: Providers rotate — the institution persists
+        - label: Evidence First
+          detail: Nothing becomes true without proof
+        - label: Identity Preserved
+          detail: Institutional memory belongs to you
+        - label: Marginal AI Cost ↓
+          detail: Inference is a one-time cost
+          tone: good
+        - label: Institutional Knowledge ↑
+          detail: Your institution gets smarter over time
+          tone: good
+      # Phase 2: Atlas graph appears as proof
+      proof:
+        reveal_after_outcomes: true
+        label: This is the Atlas. The living proof that all of this exists.
+        source: atlas.json
+      brand: CONRRAD
+      brand_lines:
+        - Institution First.
+        - AI Second.
+    metrics:
+      - label: Institutional Resolution
+        value_from: counters.institution_resolved_pct
+        unit: "%"
+        tone: good
+      - label: Inference Required
+        value_from: counters.inference_required_pct
+        unit: "%"
+        tone: warn
+      - label: Governed Decisions
+        value_from: health.relations
+      - label: Evidence Artifacts
+        value_from: counters.evidence_artifacts
+      - label: Institutional Assets
+        value_from: health.nodes
+      - label: Policies
+        value_from: counters.policies_applied
+      - label: Knowledge Growth
+        value_from: health.knowledge_coverage
+        unit: "%"
+        tone: good
+    next: null
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ACCEPTANCE CRITERIA
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+acceptance:
+  max_duration_seconds: 120
+  understandable_by:
+    - YC Partner
+    - Enterprise CTO
+    - CIO
+    - Chief Architect
+    - Auditor
+    - CFO
+  llm_is_protagonist: false
+  decorative_animations: 0
+  explains_components: false
+  sells_ai: false
+  sells_governance: true
+  sells_cost_reduction: true
+  sells_sovereignty: true
+  sells_continuity: true
+  sells_institutionalization: true
+  mandatory_triad:
+    - business_impact
+    - architecture_property
+    - institutional_evidence
+  institutional_property_map:
+    SCENE-2: The identity belongs to the institution, not the provider.
+    SCENE-3: The institution decides when it needs AI.
+    SCENE-4: The institution buys capabilities, not models.
+    SCENE-5: AI never has institutional authority.
+    SCENE-6: Every decision leaves verifiable evidence.
+    SCENE-7: The institution reduces AI usage over time.
+  visitor_takeaway: |-
+    CONRRAD uses AI only where the institution cannot answer by itself.
+    If this message is not crystal clear, the demo fails.

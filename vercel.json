@@ -9,6 +9,17 @@
       "handle": "filesystem"
     },
     {
+      "src": "/demo",
+      "status": 308,
+      "headers": {
+        "Location": "/demo/"
+      }
+    },
+    {
+      "src": "/demo/(.*)",
+      "dest": "/demo/$1"
+    },
+    {
       "src": "/.*",
       "dest": "/index.html"
     }
