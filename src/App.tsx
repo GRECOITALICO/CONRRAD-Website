@@ -1,37 +1,15 @@
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import { SiteHeader, SiteFooter } from './components/SiteChrome'
+import { HardRedirect } from './components/HardRedirect'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
 import AppShell from './pages/AppShell'
 import AppOverview from './pages/AppOverview'
 import Roadmap from './pages/Roadmap'
 import SurfacePage from './pages/SurfacePage'
-import { LayerHub, ModuleDetail } from './pages/LayerPages'
-import EvidencePage from './pages/EvidencePage'
-import {
-  AboutPage,
-  ChangelogPage,
-  DevelopersPage,
-  DonatePage,
-  EconomicPage,
-  FaqPage,
-  InvestorsPage,
-  ProblemPage,
-  StatusPage,
-  TwinOverviewPage,
-  WhitepapersPage,
-  WhyPage,
-} from './pages/AudiencePages'
-import {
-  ArchitecturePage,
-  BlogPage,
-  DocumentationPage,
-  DownloadPage,
-  SdkPage,
-  TechnologyPage,
-  WhitepaperPage,
-  YcDemoPage,
-} from './pages/ProductPages'
+import { DocumentationPage, WhitepaperPage } from './pages/ProductPages'
+import { CitizenPage, TrustPage } from './pages/CanonPages'
+import { ChangelogPage, DonatePage, FaqPage } from './pages/AudiencePages'
 
 function PublicLayout() {
   return (
@@ -58,53 +36,66 @@ function AppLayout() {
   )
 }
 
+/**
+ * Website Canon v1.0 routes (INT-WEBSITE-IMPLEMENT-001).
+ * Eliminated URLs → REDIRECT (never 404 for prior public content).
+ * Static /demo/ and /atlas/ served by filesystem (vercel.json).
+ */
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<PublicLayout />}>
+          {/* Canon Tier 0 */}
           <Route path="/" element={<Landing />} />
-          <Route path="/architecture" element={<ArchitecturePage />} />
-          <Route path="/technology" element={<TechnologyPage />} />
+          <Route path="/citizen" element={<CitizenPage />} />
+          <Route path="/trust" element={<TrustPage />} />
           <Route path="/documentation" element={<DocumentationPage />} />
-          <Route path="/docs" element={<Navigate to="/documentation" replace />} />
-          <Route path="/sdk" element={<SdkPage />} />
           <Route path="/whitepaper" element={<WhitepaperPage />} />
-          <Route path="/whitepapers" element={<Navigate to="/whitepaper" replace />} />
-          <Route path="/blog" element={<BlogPage />} />
           <Route path="/roadmap" element={<Roadmap />} />
-          <Route path="/download" element={<DownloadPage />} />
-          <Route path="/yc-demo" element={<YcDemoPage />} />
-          <Route path="/demo" element={<Navigate to="/yc-demo" replace />} />
 
-          <Route path="/problem" element={<ProblemPage />} />
-          <Route path="/why" element={<WhyPage />} />
-          <Route path="/status" element={<StatusPage />} />
-          <Route path="/twin" element={<TwinOverviewPage />} />
-          <Route path="/investors" element={<InvestorsPage />} />
-          <Route path="/developers" element={<DevelopersPage />} />
-          <Route path="/donate" element={<DonatePage />} />
-          <Route path="/economic-model" element={<EconomicPage />} />
-          <Route path="/about" element={<AboutPage />} />
+          {/* Static products — hard redirect so SPA does not swallow filesystem */}
+          <Route path="/demo" element={<HardRedirect to="/demo/" />} />
+          <Route path="/yc-demo" element={<HardRedirect to="/demo/" />} />
+          <Route path="/atlas" element={<HardRedirect to="/atlas/" />} />
+          <Route path="/twin" element={<HardRedirect to="/atlas/" />} />
+
+          {/* MERGE → REDIRECT */}
+          <Route path="/architecture" element={<Navigate to="/citizen#architecture" replace />} />
+          <Route path="/sdk" element={<Navigate to="/citizen#birth" replace />} />
+          <Route path="/evidence" element={<Navigate to="/trust#evidence" replace />} />
+          <Route path="/status" element={<Navigate to="/trust" replace />} />
+          <Route path="/economic-model" element={<Navigate to="/trust#economy" replace />} />
+          <Route path="/problem" element={<Navigate to="/" replace />} />
+          <Route path="/why" element={<Navigate to="/citizen" replace />} />
+          <Route path="/about" element={<Navigate to="/" replace />} />
+          <Route path="/investors" element={<Navigate to="/whitepaper" replace />} />
+          <Route path="/developers" element={<Navigate to="/documentation" replace />} />
+          <Route path="/download" element={<Navigate to="/documentation#get" replace />} />
+          <Route path="/pricing" element={<Navigate to="/documentation#get" replace />} />
+          <Route path="/technology" element={<Navigate to="/documentation" replace />} />
+          <Route path="/technology/:id" element={<Navigate to="/documentation" replace />} />
+          <Route path="/product" element={<Navigate to="/documentation" replace />} />
+          <Route path="/product/:id" element={<Navigate to="/documentation" replace />} />
+          <Route path="/organization" element={<Navigate to="/roadmap" replace />} />
+          <Route path="/organization/:id" element={<Navigate to="/roadmap" replace />} />
+          <Route path="/ecosystem" element={<Navigate to="/documentation" replace />} />
+          <Route path="/ecosystem/:id" element={<Navigate to="/documentation" replace />} />
+          <Route path="/ecosystem/documentation" element={<Navigate to="/documentation" replace />} />
+          <Route path="/docs" element={<Navigate to="/documentation" replace />} />
+          <Route path="/whitepapers" element={<Navigate to="/whitepaper" replace />} />
+          <Route path="/blog" element={<Navigate to="/changelog" replace />} />
+
+          {/* Utility KEEP */}
+          <Route path="/login" element={<Login />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/changelog" element={<ChangelogPage />} />
-          <Route path="/evidence" element={<EvidencePage />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/donate" element={<DonatePage />} />
 
-          <Route path="/product" element={<LayerHub layer="product" />} />
-          <Route path="/product/:id" element={<ModuleDetail layer="product" />} />
-          <Route path="/technology/:id" element={<ModuleDetail layer="technology" />} />
-          <Route path="/organization" element={<LayerHub layer="organization" />} />
-          <Route path="/organization/:id" element={<ModuleDetail layer="organization" />} />
-          <Route path="/ecosystem" element={<LayerHub layer="ecosystem" />} />
-          <Route path="/ecosystem/:id" element={<ModuleDetail layer="ecosystem" />} />
-          <Route path="/ecosystem/documentation" element={<Navigate to="/documentation" replace />} />
-
-          <Route path="/pricing" element={<Navigate to="/download" replace />} />
+          <Route path="/dashboard" element={<Navigate to="/app" replace />} />
         </Route>
 
         <Route element={<AppLayout />}>
-          <Route path="/dashboard" element={<Navigate to="/app" replace />} />
           <Route path="/app" element={<AppShell />}>
             <Route index element={<AppOverview />} />
             <Route path="roadmap" element={<Roadmap />} />
@@ -112,6 +103,7 @@ export default function App() {
           </Route>
         </Route>
 
+        {/* Unknown → HOME (compat; prior public URLs all have explicit redirects) */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

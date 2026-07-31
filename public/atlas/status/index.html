@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CONRRAD Atlas — Status</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="status-page">
+  <header class="topbar status-topbar">
+    <div class="brand">
+      <h1>Atlas Diagnostic</h1>
+      <span class="badge"><a href="https://conrrad.org/atlas/">https://conrrad.org/atlas/</a> · <a href="./">/atlas/status</a></span>
+      <div id="pub-badge" class="atlas-status STATUS-BUILDING">Publication · LOADING</div>
+    </div>
+    <div class="header-actions">
+      <a class="status-link" href="../">Open Atlas</a>
+      <a class="status-link" href="../atlas.json">atlas.json</a>
+    </div>
+  </header>
+
+  <main class="status-main">
+    <section class="status-grid" id="status-grid" aria-live="polite">
+      <article class="status-card"><h2>Build Version</h2><p id="f-build">—</p></article>
+      <article class="status-card"><h2>Commit</h2><p id="f-commit">—</p></article>
+      <article class="status-card"><h2>Deploy UTC</h2><p id="f-deploy">—</p></article>
+      <article class="status-card"><h2>Knowledge Coverage</h2><p id="f-coverage">—</p></article>
+      <article class="status-card"><h2>Nodes</h2><p id="f-nodes">—</p></article>
+      <article class="status-card"><h2>Relations</h2><p id="f-relations">—</p></article>
+      <article class="status-card"><h2>Scenes</h2><p id="f-scenes">—</p></article>
+      <article class="status-card"><h2>Perspectives</h2><p id="f-perspectives">—</p></article>
+      <article class="status-card"><h2>Publication Status</h2><p id="f-publication">—</p></article>
+      <article class="status-card"><h2>Synchronization Status</h2><p id="f-sync">—</p></article>
+    </section>
+    <pre id="status-raw" class="status-raw" hidden></pre>
+  </main>
+
+  <script src="status.js"></script>
+</body>
+</html>

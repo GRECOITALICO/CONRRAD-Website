@@ -1,0 +1,136 @@
+{
+  "schema": "conrrad.atlas.publication_status/v1",
+  "wo": "WO-ATLAS-006",
+  "atlas_status": "READY",
+  "synchronization_status": "READY",
+  "integrity_status": "READY",
+  "integrity_detail": "1be34dd4af597846720fda7fdd0c47b58311dd046fc6f61bc5cba62774a65b98",
+  "build_version": "atlas-1.2.0-20260731004416",
+  "commit": "cdbef8f8",
+  "last_deploy": "2026-07-31T00:44:13Z",
+  "deploy_utc": "2026-07-31T00:44:13Z",
+  "last_updated_utc": "2026-07-31T00:44:16Z",
+  "public_url": "https://conrrad.org/atlas/",
+  "status_url": "https://conrrad.org/atlas/status",
+  "knowledge_coverage": 73.1,
+  "nodes": 27,
+  "relations": 65,
+  "scenes": 8,
+  "perspectives": 8,
+  "domains": 13,
+  "errors": [],
+  "http_checks": {
+    "ok": true,
+    "urls": {
+      "index": {
+        "url": "https://conrrad.org/atlas/",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 6252,
+        "is_atlas": true,
+        "has_sidebar_marker": true,
+        "has_graph_marker": true,
+        "has_inspector": true,
+        "has_tour": true
+      },
+      "atlas_json": {
+        "url": "https://conrrad.org/atlas/atlas.json",
+        "http_status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 77247,
+        "is_json": true,
+        "nodes": 27,
+        "has_integrity": true
+      },
+      "css": {
+        "url": "https://conrrad.org/atlas/style.css",
+        "http_status": 200,
+        "content_type": "text/css; charset=utf-8",
+        "bytes": 18366,
+        "ok": true
+      },
+      "js": {
+        "url": "https://conrrad.org/atlas/app.js",
+        "http_status": 200,
+        "content_type": "application/javascript; charset=utf-8",
+        "bytes": 31689,
+        "ok": true
+      },
+      "public_js": {
+        "url": "https://conrrad.org/atlas/public_experience.js",
+        "http_status": 200,
+        "content_type": "application/javascript; charset=utf-8",
+        "bytes": 25059,
+        "ok": true
+      },
+      "status": {
+        "url": "https://conrrad.org/atlas/status",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 2291,
+        "is_status": true
+      },
+      "status_slash": {
+        "url": "https://conrrad.org/atlas/status/",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 2291,
+        "is_status": true
+      }
+    }
+  },
+  "model_files": [
+    "atlas.json",
+    "institutional_scenes.yaml",
+    "institutional_relationships.yaml",
+    "knowledge_state.yaml",
+    "perspectives.json",
+    "scenes.json",
+    "knowledge_states.json",
+    "relation_types.json"
+  ],
+  "model_integrity": {
+    "algorithm": "sha256",
+    "fingerprint": "1be34dd4af597846720fda7fdd0c47b58311dd046fc6f61bc5cba62774a65b98",
+    "computed_at": "2026-07-31T00:43:42Z",
+    "sources": [
+      {
+        "file": "scenes.json",
+        "sha256": "1736f0ec9f7e5aeabb958176f9d024d59124b02dc0771e718c140e55d0ca1eee",
+        "bytes": 3420
+      },
+      {
+        "file": "perspectives.json",
+        "sha256": "aecc64a677b58b30db9029bf391fd4f12e7d38662834c767abdafe3ef1ebf345",
+        "bytes": 4231
+      },
+      {
+        "file": "knowledge_states.json",
+        "sha256": "8c7260ef035b700e63c9ecfac899045011cbcb7c24b95764407496e52893cd93",
+        "bytes": 937
+      },
+      {
+        "file": "relation_types.json",
+        "sha256": "b4f88685f46d073ce55eaead27c171199ba79dc9ce95aa353e57d13bbd65401a",
+        "bytes": 920
+      },
+      {
+        "file": "institutional_scenes.yaml",
+        "sha256": "abba5c9ee7535c2f5997e4df0649e5d835c6421844c0e73492872de5d6897dd0",
+        "bytes": 2809
+      },
+      {
+        "file": "institutional_relationships.yaml",
+        "sha256": "0bbd587014bad1e9195084ed1ed2e1f8a27ce1725f6e438e2f4d5d918c197a8f",
+        "bytes": 4055
+      },
+      {
+        "file": "knowledge_state.yaml",
+        "sha256": "08e75c4c97bc7403a749345df3bd222561fa688de0c876b2d75a4e78b44531bd",
+        "bytes": 730
+      }
+    ]
+  },
+  "deployment_blocker": null,
+  "automatic_deploy": true
+}

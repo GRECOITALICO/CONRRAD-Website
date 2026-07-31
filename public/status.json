@@ -1,1 +1,17 @@
-{"status":"mvp_1_0","surface":"conrrad-website","principle":"single_web_surface"}
+{
+  "status": "canon_v1_0",
+  "surface": "conrrad-website",
+  "principle": "website_canon_v1",
+  "github_owner": "GRECOITALICO",
+  "primary_nav": [
+    "home",
+    "citizen",
+    "atlas",
+    "trust",
+    "demo",
+    "documentation",
+    "whitepaper",
+    "roadmap"
+  ],
+  "invented_metrics": false
+}

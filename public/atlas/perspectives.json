@@ -1,0 +1,140 @@
+{
+  "schema": "conrrad.atlas.perspectives/v1",
+  "wo": "WO-ATLAS-007",
+  "version": "1.1.0",
+  "default_perspective": "Founder",
+  "perspectives": [
+    {
+      "id": "Founder",
+      "label": "Founder",
+      "description": "Full institutional navigation. Hides nothing institutional.",
+      "show_domains": ["*"],
+      "show_node_types": ["*"],
+      "hide_node_ids": [],
+      "show_relation_types": ["*"],
+      "show_unmapped": true
+    },
+    {
+      "id": "Runtime",
+      "label": "Runtime",
+      "description": "Runtime synchronization, commit mutation, and closed-loop surfaces.",
+      "show_domains": [
+        "domain.conrrad",
+        "domain.runtime",
+        "domain.anny",
+        "domain.assets",
+        "domain.evidence",
+        "domain.harlemm",
+        "domain.infra",
+        "domain.unmapped"
+      ],
+      "show_node_types": ["*"],
+      "hide_node_ids": [],
+      "show_relation_types": ["owns", "uses", "updates", "produces", "requires", "coordinates", "validates", "supports"],
+      "show_unmapped": true
+    },
+    {
+      "id": "Planner",
+      "label": "Planner",
+      "description": "Mission planning and worker coordination. Hides citizen-only surfaces.",
+      "show_domains": [
+        "domain.conrrad",
+        "domain.anny",
+        "domain.workers",
+        "domain.evidence",
+        "domain.governance",
+        "domain.runtime",
+        "domain.unmapped"
+      ],
+      "show_node_types": ["*"],
+      "hide_node_ids": ["child_citizen"],
+      "show_relation_types": ["creates", "requires", "coordinates", "produces", "depends_on", "owns", "uses"],
+      "show_unmapped": true
+    },
+    {
+      "id": "Worker",
+      "label": "Worker",
+      "description": "Worker lifecycle and evidence production.",
+      "show_domains": [
+        "domain.conrrad",
+        "domain.workers",
+        "domain.evidence",
+        "domain.anny",
+        "domain.governance",
+        "domain.unmapped"
+      ],
+      "show_node_types": ["*"],
+      "hide_node_ids": [],
+      "show_relation_types": ["owns", "creates", "produces", "uses", "requires", "updates", "coordinates"],
+      "show_unmapped": true
+    },
+    {
+      "id": "Auditor",
+      "label": "Auditor",
+      "description": "Evidence, governance, certification, and validation paths.",
+      "show_domains": [
+        "domain.conrrad",
+        "domain.evidence",
+        "domain.governance",
+        "domain.twins",
+        "domain.runtime",
+        "domain.unmapped"
+      ],
+      "show_node_types": ["*"],
+      "hide_node_ids": [],
+      "show_relation_types": ["validates", "observes", "depends_on", "produces", "consumes", "owns"],
+      "show_unmapped": true
+    },
+    {
+      "id": "Citizen",
+      "label": "Citizen",
+      "description": "Citizen journey and support surfaces.",
+      "show_domains": [
+        "domain.conrrad",
+        "domain.citizen",
+        "domain.assets",
+        "domain.evidence",
+        "domain.anny",
+        "domain.unmapped"
+      ],
+      "show_node_types": ["*"],
+      "hide_node_ids": [],
+      "show_relation_types": ["uses", "consumes", "supports", "produces", "depends_on", "owns"],
+      "show_unmapped": true
+    },
+    {
+      "id": "Developer",
+      "label": "Developer",
+      "description": "Workers, Atlas publication, evidence, and runtime tooling surfaces.",
+      "show_domains": [
+        "domain.conrrad",
+        "domain.workers",
+        "domain.twins",
+        "domain.evidence",
+        "domain.runtime",
+        "domain.anny",
+        "domain.unmapped"
+      ],
+      "show_node_types": ["*"],
+      "hide_node_ids": ["child_citizen"],
+      "show_relation_types": ["owns", "produces", "uses", "updates", "creates", "depends_on", "coordinates"],
+      "show_unmapped": true
+    },
+    {
+      "id": "Infrastructure",
+      "label": "Infrastructure",
+      "description": "Infrastructure and placement layers.",
+      "show_domains": [
+        "domain.conrrad",
+        "domain.infra",
+        "domain.runtime",
+        "domain.sully",
+        "domain.unmapped"
+      ],
+      "show_node_types": ["*"],
+      "hide_node_ids": [],
+      "show_relation_types": ["owns", "supports", "requires", "depends_on", "observes", "updates"],
+      "show_unmapped": true
+    }
+  ]
+}

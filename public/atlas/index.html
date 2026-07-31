@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CONRRAD Atlas — Institutional Digital Twin</title>
+  <meta name="description" content="CONRRAD Atlas — the institutional digital twin: authority, execution, evidence and health of the institution." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/institutional-chrome.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="validator.js"></script>
+</head>
+<body class="has-eco-chrome">
+  <header class="eco-chrome" aria-label="CONRRAD institutional chrome">
+    <a class="eco-logo" href="https://conrrad.org/">
+      <img src="/icon-48.png" alt="" width="22" height="22" />
+      <span class="eco-wordmark">CONRRAD</span>
+    </a>
+    <nav class="eco-nav" aria-label="CONRRAD products">
+      <a href="https://conrrad.org/">Home</a>
+      <a href="https://conrrad.org/atlas/" aria-current="page">Atlas</a>
+      <a href="https://conrrad.org/demo/">Demo</a>
+    </nav>
+  </header>
+
+  <div id="atlas-app" class="atlas-app">
+    <header class="topbar institutional-header">
+      <div class="brand">
+        <h1>CONRRAD Atlas</h1>
+        <span class="badge">Institutional Digital Twin · <a href="https://conrrad.org/atlas/">conrrad.org/atlas</a></span>
+        <div id="atlas-status" class="atlas-status STATUS-BUILDING">ATLAS STATUS · BUILDING</div>
+      </div>
+      <div id="inst-counters" class="inst-counters" aria-live="polite"></div>
+      <div class="header-actions">
+        <button type="button" id="btn-start-tour" class="btn-primary">Start Institutional Tour</button>
+        <button type="button" id="btn-play-mission" class="btn-secondary">Play</button>
+        <div class="view-switch" role="group" aria-label="Visualization mode">
+          <button type="button" id="btn-graph-view" class="view-btn active" aria-pressed="true">Graph View</button>
+          <button type="button" id="btn-tree-view" class="view-btn" aria-pressed="false">Tree View</button>
+        </div>
+        <button type="button" id="btn-refresh">Refresh</button>
+        <button type="button" id="btn-download">Download Model</button>
+        <div class="selectors">
+          <label for="perspective-select">Perspective</label>
+          <select id="perspective-select"></select>
+          <label for="scene-select">Scene</label>
+          <select id="scene-select"></select>
+        </div>
+      </div>
+    </header>
+
+    <div class="atlas-toolbar">
+      <label class="search-wrap" for="inst-search">
+        <span>Institution Search</span>
+        <input id="inst-search" type="search" placeholder="Node, mission, worker, policy, evidence, capability, decision, artifact, relationship…" autocomplete="off" />
+      </label>
+      <div id="search-results" class="search-results" hidden></div>
+      <div id="tour-card" class="tour-card" hidden aria-live="polite"></div>
+      <div id="playback-card" class="playback-card" hidden aria-live="polite"></div>
+    </div>
+
+    <main class="layout twin-layout atlas-layout">
+      <aside class="sidebar domains-panel">
+        <h2>Institution Health</h2>
+        <div id="health-panel" class="health-panel" aria-live="polite"></div>
+        <h2>Institution Metrics</h2>
+        <div id="metrics-panel" class="maturity-panel" aria-live="polite"></div>
+        <h2>Institutional Maturity</h2>
+        <div id="maturity-panel" class="maturity-panel" aria-live="polite"></div>
+        <h2>Institutional Tests</h2>
+        <div id="tests-panel" class="tests-panel" aria-live="polite"></div>
+        <h2>Institution Timeline</h2>
+        <div id="timeline-panel" class="timeline-panel" role="tablist">
+          <button type="button" class="tl-btn active" data-era="past">Past</button>
+          <button type="button" class="tl-btn" data-era="present">Present</button>
+          <button type="button" class="tl-btn" data-era="future">Future Planned</button>
+        </div>
+        <p id="timeline-copy" class="timeline-copy"></p>
+        <h2>Domains</h2>
+        <ul id="domain-tree" class="domain-tree"></ul>
+        <div class="legend">
+          <h3>Knowledge</h3>
+          <ul id="knowledge-legend"></ul>
+          <h3>Relations</h3>
+          <ul id="relation-legend"></ul>
+        </div>
+      </aside>
+      <section class="canvas-panel">
+        <div id="graph-view" class="visualization-view active-view">
+          <svg id="graph" role="img" aria-label="Atlas institutional graph"></svg>
+        </div>
+        <div id="tree-view" class="visualization-view tree-view" hidden aria-label="Atlas institutional hierarchy">
+          <div class="tree-heading">
+            <span>Institutional hierarchy</span>
+            <small>Same model · current perspective</small>
+          </div>
+          <div id="institution-tree" class="institution-tree"></div>
+        </div>
+        <div id="load-error" class="load-error" hidden></div>
+      </section>
+      <aside class="sidebar inspector-panel">
+        <h2>Institution Inspector</h2>
+        <div id="inspector" class="inspector empty">Select a node to inspect the institution</div>
+      </aside>
+    </main>
+
+    <footer class="foot">
+      <span>Atlas consumes the institutional model · never owns institutional knowledge</span>
+      <span id="validation-status"></span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="public_experience.js"></script>
+</body>
+</html>

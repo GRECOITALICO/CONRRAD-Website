@@ -7,8 +7,8 @@ const TILE_IDS = ['execution', 'projects', 'packages', 'evidence', 'agents', 'ma
 const CHANGELOG = [
   {
     ver: '1.0.2',
-    added: ['Guest Session only', 'Investor-grade home', 'Evidence board', 'Donate 0 USD ledger'],
-    known: ['Runtime Identity not connected'],
+    added: ['Guest Session only', 'Canon v1.0 nav', 'Trust board', 'Atlas + Demo static'],
+    known: ['Institutional identity auth not connected'],
   },
 ]
 
@@ -29,19 +29,19 @@ export default function AppOverview() {
         </h1>
         <p className="text-mute max-w-2xl leading-relaxed">
           {guest
-            ? 'Guest Session only — no Founder, Admin, or Runtime Identity yet.'
-            : 'Open as visitor anytime. Sign-in creates a Guest Session until Runtime Identity exists.'}
+            ? 'Guest Session only — no Founder or Admin privileges. Preview shell, not the Citizen.'
+            : 'Open as visitor anytime. Sign-in creates a Guest Session until institutional identity auth exists.'}
         </p>
         <div className="flex flex-wrap gap-3 mt-4">
-          <Link to="/twin" className="text-xs font-semibold uppercase tracking-[0.14em] text-accent hover:underline">
-            Full twin →
+          <Link to="/citizen" className="text-xs font-semibold uppercase tracking-[0.14em] text-accent hover:underline">
+            Citizen →
           </Link>
-          <Link to="/evidence" className="text-xs font-semibold uppercase tracking-[0.14em] text-mute hover:underline">
-            Evidence
+          <Link to="/trust" className="text-xs font-semibold uppercase tracking-[0.14em] text-mute hover:underline">
+            Trust
           </Link>
-          <Link to="/donate" className="text-xs font-semibold uppercase tracking-[0.14em] text-gold hover:underline">
-            Donate
-          </Link>
+          <a href="/atlas/" className="text-xs font-semibold uppercase tracking-[0.14em] text-mute hover:underline">
+            Atlas
+          </a>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ export default function AppOverview() {
           <div>
             <p className="text-[10px] uppercase tracking-widest text-mute mb-1">Next</p>
             <p className="font-display text-2xl font-bold">Phase 1.1</p>
-            <p className="text-sm text-mute">Execution Runtime</p>
+            <p className="text-sm text-mute">Governed execution</p>
           </div>
           <div>
             <p className="text-[10px] uppercase tracking-widest text-mute mb-1">ETA</p>

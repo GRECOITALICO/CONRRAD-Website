@@ -1,0 +1,2955 @@
+{
+  "schema": "conrrad.atlas.digital_twin/v1",
+  "version": "1.2.0",
+  "wo": "WO-ATLAS-007",
+  "product": "CONRRAD Atlas Institutional Digital Twin",
+  "domains": [
+    {
+      "id": "domain.conrrad",
+      "label": "CONRRAD"
+    },
+    {
+      "id": "domain.anny",
+      "label": "ANNY"
+    },
+    {
+      "id": "domain.harlemm",
+      "label": "HARLEMM"
+    },
+    {
+      "id": "domain.sully",
+      "label": "SULLY"
+    },
+    {
+      "id": "domain.workers",
+      "label": "Workers"
+    },
+    {
+      "id": "domain.evidence",
+      "label": "Evidence"
+    },
+    {
+      "id": "domain.runtime",
+      "label": "Runtime"
+    },
+    {
+      "id": "domain.citizen",
+      "label": "Citizen Journey"
+    },
+    {
+      "id": "domain.infra",
+      "label": "Infrastructure"
+    },
+    {
+      "id": "domain.twins",
+      "label": "Digital Twins"
+    },
+    {
+      "id": "domain.governance",
+      "label": "Governance"
+    },
+    {
+      "id": "domain.assets",
+      "label": "Assets"
+    },
+    {
+      "id": "domain.unmapped",
+      "label": "UNMAPPED"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "conrrad",
+      "atlas_index": 0,
+      "label": "CONRRAD",
+      "type": "organism",
+      "description": "Institutional organism. Root of the navigable twin.",
+      "status": "active",
+      "artifact": "Atlas/graph/nodes/conrrad.yaml",
+      "source": "Atlas/graph/nodes/conrrad.yaml",
+      "domain": "domain.conrrad",
+      "parent": null,
+      "mapping_status": "mapped",
+      "source_artifact": "Atlas/graph/nodes/conrrad.yaml",
+      "rfc": null,
+      "decision": null,
+      "owner": "Founder",
+      "dependencies": [
+        "governance"
+      ],
+      "consumers": [],
+      "providers": [
+        "anny",
+        "citizen_journey",
+        "digital_twins",
+        "evidence",
+        "founder_login",
+        "harlemm",
+        "infrastructure",
+        "institutional_state",
+        "sully",
+        "unmapped",
+        "workers"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "organism",
+      "referenced_rfc": null,
+      "referenced_yaml": "Atlas/graph/nodes/conrrad.yaml",
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "anny",
+      "atlas_index": 1,
+      "label": "ANNY",
+      "type": "dto",
+      "description": "Director Técnico Operacional. Publishes SWOP Work Orders.",
+      "status": "active",
+      "artifact": "MASTER_PLAN/ANNY/",
+      "source": "Atlas/graph/nodes/anny.yaml",
+      "domain": "domain.anny",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "MASTER_PLAN/ANNY/",
+      "rfc": null,
+      "decision": null,
+      "owner": "ANNY",
+      "dependencies": [
+        "governance",
+        "workers"
+      ],
+      "consumers": [
+        "digital_twins",
+        "founder_login"
+      ],
+      "providers": [
+        "assets",
+        "conrrad",
+        "mission",
+        "planner",
+        "runtime"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "dto",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "harlemm",
+      "atlas_index": 2,
+      "label": "HARLEMM",
+      "type": "governance_plane",
+      "description": "Cognitive and memory governance. Does not select inference models.",
+      "status": "active",
+      "artifact": "docs/ADR-008_HIT_HARLEMM_SULLY_BOUNDARY.md",
+      "source": "Atlas/graph/nodes/harlemm.yaml",
+      "domain": "domain.harlemm",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "docs/ADR-008_HIT_HARLEMM_SULLY_BOUNDARY.md",
+      "rfc": null,
+      "decision": null,
+      "owner": "HARLEMM",
+      "dependencies": [
+        "sully"
+      ],
+      "consumers": [],
+      "providers": [
+        "conrrad"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "governance_plane",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "sully",
+      "atlas_index": 3,
+      "label": "SULLY",
+      "type": "inference_os",
+      "description": "Inference operating system. Executes model tickets under guardrails.",
+      "status": "active",
+      "artifact": "conrrad-sdk/conrrad_sdk/sully/",
+      "source": "Atlas/graph/nodes/sully.yaml",
+      "domain": "domain.sully",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "conrrad-sdk/conrrad_sdk/sully/",
+      "rfc": null,
+      "decision": null,
+      "owner": "SULLY",
+      "dependencies": [
+        "infrastructure"
+      ],
+      "consumers": [
+        "harlemm"
+      ],
+      "providers": [
+        "conrrad"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "inference_os",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "workers",
+      "atlas_index": 4,
+      "label": "Workers",
+      "type": "registry",
+      "description": "Registered tool citizens that execute Work Orders under TOOL_PROTOCOL.",
+      "status": "active",
+      "artifact": "coordination/workers.yaml",
+      "source": "Atlas/graph/nodes/workers.yaml",
+      "domain": "domain.workers",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "coordination/workers.yaml",
+      "rfc": null,
+      "decision": null,
+      "owner": "ANNY",
+      "dependencies": [],
+      "consumers": [
+        "anny",
+        "governance"
+      ],
+      "providers": [
+        "conrrad",
+        "evidence",
+        "worker.antigravity",
+        "worker.bootstrap-launcher",
+        "worker.ide-cursor"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "registry",
+      "referenced_rfc": null,
+      "referenced_yaml": "coordination/workers.yaml",
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "worker.ide-cursor",
+      "atlas_index": 5,
+      "label": "ide-cursor",
+      "type": "worker",
+      "description": "Cursor IDE worker. Implements assigned SWOP Work Orders.",
+      "status": "online",
+      "artifact": "tools/cursor/cursor.identity.yaml",
+      "source": "coordination/workers.yaml",
+      "domain": "domain.workers",
+      "parent": "workers",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "tools/cursor/cursor.identity.yaml",
+      "rfc": null,
+      "decision": null,
+      "owner": "ide-cursor",
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "evidence",
+        "workers"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "worker",
+      "referenced_rfc": null,
+      "referenced_yaml": "tools/cursor/cursor.identity.yaml",
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "worker.antigravity",
+      "atlas_index": 6,
+      "label": "tool-antigravity",
+      "type": "worker",
+      "description": "Antigravity agent worker under TOOL_PROTOCOL.",
+      "status": "online",
+      "artifact": "tools/antigravity/antigravity.identity.yaml",
+      "source": "coordination/workers.yaml",
+      "domain": "domain.workers",
+      "parent": "workers",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "tools/antigravity/antigravity.identity.yaml",
+      "rfc": null,
+      "decision": null,
+      "owner": "tool-antigravity",
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "evidence",
+        "workers"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "worker",
+      "referenced_rfc": null,
+      "referenced_yaml": "tools/antigravity/antigravity.identity.yaml",
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "evidence",
+      "atlas_index": 7,
+      "label": "Evidence",
+      "type": "plane",
+      "description": "Certified WO product trails and activity proof.",
+      "status": "active",
+      "artifact": "WORKSTATION/product/",
+      "source": "Atlas/graph/nodes/evidence.yaml",
+      "domain": "domain.evidence",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "WORKSTATION/product/",
+      "rfc": null,
+      "decision": null,
+      "owner": "ANNY",
+      "dependencies": [],
+      "consumers": [
+        "assets",
+        "digital_twins"
+      ],
+      "providers": [
+        "atlas_publication",
+        "conrrad",
+        "mission",
+        "worker.antigravity",
+        "worker.bootstrap-launcher",
+        "worker.ide-cursor",
+        "workers"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "plane",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "runtime",
+      "atlas_index": 8,
+      "label": "Runtime",
+      "type": "plane",
+      "description": "Closed-loop operational projections and Runtime Manifest.",
+      "status": "active",
+      "artifact": "ANNY/runtime/",
+      "source": "Atlas/graph/nodes/runtime.yaml",
+      "domain": "domain.runtime",
+      "parent": "anny",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "ANNY/runtime/",
+      "rfc": null,
+      "decision": null,
+      "owner": "ANNY",
+      "dependencies": [
+        "assets"
+      ],
+      "consumers": [],
+      "providers": [
+        "anny",
+        "commit_mutation",
+        "infrastructure"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "plane",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": "ANNY/runtime/"
+    },
+    {
+      "id": "citizen_journey",
+      "atlas_index": 9,
+      "label": "Citizen Journey",
+      "type": "journey",
+      "description": "Host/Founder path through the organism to Capsule delivery.",
+      "status": "active",
+      "artifact": "docs/CONRRAD_CITIZEN_ATLAS.md",
+      "source": "Atlas/graph/nodes/citizen_journey.yaml",
+      "domain": "domain.citizen",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "docs/CONRRAD_CITIZEN_ATLAS.md",
+      "rfc": null,
+      "decision": null,
+      "owner": "ANNY",
+      "dependencies": [
+        "assets"
+      ],
+      "consumers": [],
+      "providers": [
+        "child_citizen",
+        "citizen",
+        "conrrad",
+        "digital_twins",
+        "support"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "journey",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "infrastructure",
+      "atlas_index": 10,
+      "label": "Infrastructure",
+      "type": "plane",
+      "description": "AWS Workstation origin, systemd, WORKSTATION tree.",
+      "status": "active",
+      "artifact": "infra/",
+      "source": "Atlas/graph/nodes/infrastructure.yaml",
+      "domain": "domain.infra",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "infra/",
+      "rfc": null,
+      "decision": null,
+      "owner": "Founder",
+      "dependencies": [],
+      "consumers": [
+        "sully"
+      ],
+      "providers": [
+        "conrrad",
+        "runtime"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "plane",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "digital_twins",
+      "atlas_index": 11,
+      "label": "Digital Twins",
+      "type": "twin",
+      "description": "CONRRAD Atlas — navigable documentation source of truth.",
+      "status": "active",
+      "artifact": "atlas/",
+      "source": "Atlas/graph/nodes/digital_twins.yaml",
+      "domain": "domain.twins",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "atlas/",
+      "rfc": null,
+      "decision": null,
+      "owner": "Founder",
+      "dependencies": [
+        "anny",
+        "evidence"
+      ],
+      "consumers": [],
+      "providers": [
+        "atlas_publication",
+        "conrrad"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "twin",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "governance",
+      "atlas_index": 12,
+      "label": "Governance",
+      "type": "law",
+      "description": "Constitution, SWOP, ownership, TOOL_PROTOCOL.",
+      "status": "active",
+      "artifact": "MASTER_PLAN/ANNY/SWOP.md",
+      "source": "Atlas/graph/nodes/governance.yaml",
+      "domain": "domain.governance",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "MASTER_PLAN/ANNY/SWOP.md",
+      "rfc": null,
+      "decision": null,
+      "owner": "architecture",
+      "dependencies": [
+        "workers"
+      ],
+      "consumers": [
+        "anny",
+        "conrrad"
+      ],
+      "providers": [
+        "certification"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "law",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "assets",
+      "atlas_index": 13,
+      "label": "Assets",
+      "type": "plane",
+      "description": "Packages, Universal Capsule, certificates.",
+      "status": "active",
+      "artifact": "ANNY/package_builder/out/",
+      "source": "Atlas/graph/nodes/assets.yaml",
+      "domain": "domain.assets",
+      "parent": "anny",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "ANNY/package_builder/out/",
+      "rfc": null,
+      "decision": null,
+      "owner": "ANNY",
+      "dependencies": [
+        "evidence"
+      ],
+      "consumers": [
+        "citizen_journey",
+        "runtime"
+      ],
+      "providers": [
+        "anny"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "plane",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "unmapped",
+      "atlas_index": 9990,
+      "label": "UNMAPPED",
+      "type": "bucket",
+      "description": "Bucket for nodes whose parent is unknown. Visible by rule. Do not hide.",
+      "status": "visible",
+      "artifact": "atlas/data/atlas.json",
+      "source": "WO-ATLAS-002",
+      "domain": "domain.unmapped",
+      "parent": "conrrad",
+      "mapping_status": "mapped",
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "source_artifact": "atlas/data/atlas.json",
+      "rfc": null,
+      "decision": null,
+      "owner": null,
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "conrrad"
+      ],
+      "open_source": null,
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "institutional_type": "bucket",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "observatory",
+      "atlas_index": 9991,
+      "label": "Observatory",
+      "type": "plane",
+      "description": "Workstation Observatory evidence/projection surface. Parent mapping incomplete.",
+      "status": "pending",
+      "artifact": "WORKSTATION/observatory/",
+      "source": "WORKSTATION/observatory/",
+      "domain": "domain.unmapped",
+      "parent": "unmapped",
+      "mapping_status": "pending",
+      "needs_founder_mapping": true,
+      "pending_connections": true,
+      "knowledge_state": "DISCOVERY_REQUIRED",
+      "gap_class": "CLASS_E",
+      "owner": null,
+      "source_artifact": "WORKSTATION/observatory/",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [],
+      "consumers": [],
+      "providers": [],
+      "open_source": null,
+      "discovery_required": true,
+      "institutional_type": "plane",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "worker.bootstrap-launcher",
+      "atlas_index": 9992,
+      "label": "bootstrap-launcher",
+      "type": "worker",
+      "description": "CONRRAD_START launcher worker. Registered in workers.yaml.",
+      "status": "pending",
+      "artifact": "coordination/workers.yaml",
+      "source": "coordination/workers.yaml",
+      "domain": "domain.workers",
+      "parent": "workers",
+      "mapping_status": "pending",
+      "needs_founder_mapping": true,
+      "pending_connections": true,
+      "knowledge_state": "UNMAPPED",
+      "gap_class": "CLASS_C",
+      "owner": "ANNY",
+      "source_artifact": "coordination/workers.yaml",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "evidence",
+        "workers"
+      ],
+      "open_source": null,
+      "institutional_type": "worker",
+      "referenced_rfc": null,
+      "referenced_yaml": "coordination/workers.yaml",
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "founder_login",
+      "atlas_index": 9993,
+      "label": "Founder Login",
+      "type": "entry",
+      "description": "Founder session entry into the institutional system. Starts the Institutional Journey.",
+      "status": "active",
+      "artifact": "BOOTSTRAP/",
+      "source": "BOOTSTRAP/",
+      "domain": "domain.conrrad",
+      "parent": "conrrad",
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "owner": "Founder",
+      "related_decisions": [
+        "Needs Founder Mapping — session authority surface"
+      ],
+      "related_policies": [
+        "SWOP"
+      ],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "BOOTSTRAP/",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [
+        "anny"
+      ],
+      "consumers": [],
+      "providers": [
+        "conrrad"
+      ],
+      "open_source": null,
+      "institutional_type": "entry",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "mission",
+      "atlas_index": 9994,
+      "label": "Mission",
+      "type": "work_unit",
+      "description": "Institutional mission / Work Order unit directed by ANNY. First-class object (WO-ATLAS-007).",
+      "status": "active",
+      "artifact": "MASTER_PLAN/ANNY/SWOP.md",
+      "source": "MASTER_PLAN/ANNY/SWOP.md",
+      "domain": "domain.anny",
+      "parent": "anny",
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "owner": "ANNY",
+      "related_decisions": [],
+      "related_policies": [
+        "SWOP"
+      ],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "MASTER_PLAN/ANNY/SWOP.md",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [
+        "planner"
+      ],
+      "consumers": [
+        "planner"
+      ],
+      "providers": [
+        "anny",
+        "evidence"
+      ],
+      "open_source": null,
+      "institutional_type": "work_unit",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "planner",
+      "atlas_index": 9995,
+      "label": "Planner",
+      "type": "plane",
+      "description": "Mission planning / sequencing plane. Temporal execution state remains partially mapped.",
+      "status": "active",
+      "artifact": "Needs Founder Mapping",
+      "source": "Needs Founder Mapping",
+      "domain": "domain.anny",
+      "parent": "anny",
+      "knowledge_state": "UNMAPPED",
+      "gap_class": "CLASS_A",
+      "needs_founder_mapping": true,
+      "pending_connections": false,
+      "owner": null,
+      "related_decisions": [
+        "Who owns Planner vs Runtime timeline?"
+      ],
+      "related_policies": [],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "Needs Founder Mapping",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [
+        "mission"
+      ],
+      "consumers": [
+        "mission"
+      ],
+      "providers": [
+        "anny"
+      ],
+      "open_source": null,
+      "institutional_type": "plane",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "commit_mutation",
+      "atlas_index": 9996,
+      "label": "Commit Mutation",
+      "type": "operation",
+      "description": "Runtime commit of institutional state mutation after governed execution.",
+      "status": "active",
+      "artifact": "ANNY/runtime/",
+      "source": "ANNY/runtime/",
+      "domain": "domain.runtime",
+      "parent": "runtime",
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "owner": "Runtime",
+      "related_decisions": [],
+      "related_policies": [],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "ANNY/runtime/",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "runtime"
+      ],
+      "open_source": null,
+      "institutional_type": "operation",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": "ANNY/runtime/"
+    },
+    {
+      "id": "institutional_state",
+      "atlas_index": 9997,
+      "label": "Institutional State",
+      "type": "state",
+      "description": "Durable institutional state after commit mutation. Projection target for Atlas twin.",
+      "status": "active",
+      "artifact": "coordination/",
+      "source": "coordination/",
+      "domain": "domain.conrrad",
+      "parent": "conrrad",
+      "knowledge_state": "UNMAPPED",
+      "gap_class": "CLASS_B",
+      "needs_founder_mapping": true,
+      "pending_connections": false,
+      "owner": null,
+      "related_decisions": [
+        "Who generates Coordination State?"
+      ],
+      "related_policies": [],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "coordination/",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "conrrad"
+      ],
+      "open_source": null,
+      "institutional_type": "state",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "citizen",
+      "atlas_index": 9998,
+      "label": "Citizen",
+      "type": "actor",
+      "description": "Citizen actor within the institutional journey and support path.",
+      "status": "active",
+      "artifact": "Needs Founder Mapping",
+      "source": "Needs Founder Mapping",
+      "domain": "domain.citizen",
+      "parent": "citizen_journey",
+      "knowledge_state": "UNMAPPED",
+      "gap_class": "CLASS_C",
+      "needs_founder_mapping": true,
+      "pending_connections": false,
+      "owner": null,
+      "related_decisions": [],
+      "related_policies": [],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "Needs Founder Mapping",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [
+        "support"
+      ],
+      "consumers": [],
+      "providers": [
+        "citizen_journey",
+        "institutional_state"
+      ],
+      "open_source": null,
+      "institutional_type": "actor",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "support",
+      "atlas_index": 9999,
+      "label": "Support",
+      "type": "capability",
+      "description": "Citizen support capability surface along the journey.",
+      "status": "active",
+      "artifact": "Needs Founder Mapping",
+      "source": "Needs Founder Mapping",
+      "domain": "domain.citizen",
+      "parent": "citizen_journey",
+      "knowledge_state": "UNMAPPED",
+      "gap_class": "CLASS_A",
+      "needs_founder_mapping": true,
+      "pending_connections": false,
+      "owner": null,
+      "related_decisions": [],
+      "related_policies": [],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "Needs Founder Mapping",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [],
+      "consumers": [
+        "citizen"
+      ],
+      "providers": [
+        "citizen_journey"
+      ],
+      "open_source": null,
+      "institutional_type": "capability",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "child_citizen",
+      "atlas_index": 10000,
+      "label": "Child Citizen",
+      "type": "actor",
+      "description": "Child citizen support endpoint. Incomplete mapping remains visible.",
+      "status": "active",
+      "artifact": "Needs Founder Mapping",
+      "source": "Needs Founder Mapping",
+      "domain": "domain.citizen",
+      "parent": "citizen_journey",
+      "knowledge_state": "UNMAPPED",
+      "gap_class": "CLASS_D",
+      "needs_founder_mapping": true,
+      "pending_connections": false,
+      "owner": null,
+      "related_decisions": [],
+      "related_policies": [],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "Needs Founder Mapping",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "citizen_journey",
+        "support"
+      ],
+      "open_source": null,
+      "institutional_type": "actor",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "atlas_publication",
+      "atlas_index": 10001,
+      "label": "Atlas Publication",
+      "type": "capability",
+      "description": "Continuous publication of the institutional twin to https://conrrad.org/atlas/.",
+      "status": "active",
+      "artifact": "atlas/tools/publish_continuous.py",
+      "source": "atlas/tools/publish_continuous.py",
+      "domain": "domain.twins",
+      "parent": "digital_twins",
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "owner": "Cursor",
+      "related_decisions": [],
+      "related_policies": [],
+      "related_evidence": [
+        "ATLAS_DEPLOY_CERTIFICATE.md"
+      ],
+      "mapping_status": "mapped",
+      "source_artifact": "atlas/tools/publish_continuous.py",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "digital_twins",
+        "evidence"
+      ],
+      "open_source": null,
+      "institutional_type": "capability",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    },
+    {
+      "id": "certification",
+      "atlas_index": 10002,
+      "label": "Certification",
+      "type": "capability",
+      "description": "Institutional certification lifecycle (AOCS / deployment harness / Atlas certify).",
+      "status": "active",
+      "artifact": "ANNY/certification/",
+      "source": "ANNY/certification/",
+      "domain": "domain.governance",
+      "parent": "governance",
+      "knowledge_state": "KNOWN",
+      "gap_class": null,
+      "needs_founder_mapping": false,
+      "pending_connections": false,
+      "owner": "ANNY",
+      "related_decisions": [],
+      "related_policies": [
+        "AOCS"
+      ],
+      "related_evidence": [],
+      "mapping_status": "pending",
+      "source_artifact": "ANNY/certification/",
+      "rfc": null,
+      "decision": null,
+      "dependencies": [],
+      "consumers": [],
+      "providers": [
+        "governance"
+      ],
+      "open_source": null,
+      "institutional_type": "capability",
+      "referenced_rfc": null,
+      "referenced_yaml": null,
+      "referenced_runtime_component": null
+    }
+  ],
+  "relations": [
+    {
+      "from": "conrrad",
+      "to": "anny",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "harlemm",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "sully",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "workers",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "evidence",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "citizen_journey",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "infrastructure",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "digital_twins",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "governance",
+      "type": "depends_on"
+    },
+    {
+      "from": "anny",
+      "to": "runtime",
+      "type": "owns"
+    },
+    {
+      "from": "anny",
+      "to": "assets",
+      "type": "creates"
+    },
+    {
+      "from": "anny",
+      "to": "workers",
+      "type": "uses"
+    },
+    {
+      "from": "anny",
+      "to": "governance",
+      "type": "depends_on"
+    },
+    {
+      "from": "workers",
+      "to": "worker.ide-cursor",
+      "type": "owns"
+    },
+    {
+      "from": "workers",
+      "to": "worker.antigravity",
+      "type": "owns"
+    },
+    {
+      "from": "worker.ide-cursor",
+      "to": "evidence",
+      "type": "creates"
+    },
+    {
+      "from": "worker.antigravity",
+      "to": "evidence",
+      "type": "creates"
+    },
+    {
+      "from": "runtime",
+      "to": "assets",
+      "type": "uses"
+    },
+    {
+      "from": "digital_twins",
+      "to": "evidence",
+      "type": "uses"
+    },
+    {
+      "from": "digital_twins",
+      "to": "anny",
+      "type": "depends_on"
+    },
+    {
+      "from": "harlemm",
+      "to": "sully",
+      "type": "depends_on"
+    },
+    {
+      "from": "sully",
+      "to": "infrastructure",
+      "type": "depends_on"
+    },
+    {
+      "from": "citizen_journey",
+      "to": "assets",
+      "type": "uses"
+    },
+    {
+      "from": "assets",
+      "to": "evidence",
+      "type": "depends_on"
+    },
+    {
+      "from": "infrastructure",
+      "to": "runtime",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "unmapped",
+      "type": "owns"
+    },
+    {
+      "from": "runtime",
+      "to": "assets",
+      "type": "updates"
+    },
+    {
+      "from": "harlemm",
+      "to": "runtime",
+      "type": "coordinates"
+    },
+    {
+      "from": "evidence",
+      "to": "digital_twins",
+      "type": "validates"
+    },
+    {
+      "from": "worker.ide-cursor",
+      "to": "evidence",
+      "type": "produces"
+    },
+    {
+      "from": "worker.antigravity",
+      "to": "evidence",
+      "type": "produces"
+    },
+    {
+      "from": "citizen_journey",
+      "to": "assets",
+      "type": "consumes"
+    },
+    {
+      "from": "observatory",
+      "to": "evidence",
+      "type": "observes"
+    },
+    {
+      "from": "infrastructure",
+      "to": "runtime",
+      "type": "supports"
+    },
+    {
+      "from": "governance",
+      "to": "workers",
+      "type": "requires"
+    },
+    {
+      "from": "anny",
+      "to": "harlemm",
+      "type": "coordinates"
+    },
+    {
+      "from": "digital_twins",
+      "to": "citizen_journey",
+      "type": "supports"
+    },
+    {
+      "from": "conrrad",
+      "to": "founder_login",
+      "type": "owns"
+    },
+    {
+      "from": "anny",
+      "to": "mission",
+      "type": "owns"
+    },
+    {
+      "from": "anny",
+      "to": "planner",
+      "type": "owns"
+    },
+    {
+      "from": "runtime",
+      "to": "commit_mutation",
+      "type": "owns"
+    },
+    {
+      "from": "conrrad",
+      "to": "institutional_state",
+      "type": "owns"
+    },
+    {
+      "from": "citizen_journey",
+      "to": "citizen",
+      "type": "owns"
+    },
+    {
+      "from": "citizen_journey",
+      "to": "support",
+      "type": "owns"
+    },
+    {
+      "from": "citizen_journey",
+      "to": "child_citizen",
+      "type": "owns"
+    },
+    {
+      "from": "digital_twins",
+      "to": "atlas_publication",
+      "type": "owns"
+    },
+    {
+      "from": "governance",
+      "to": "certification",
+      "type": "owns"
+    },
+    {
+      "from": "worker.bootstrap-launcher",
+      "to": "evidence",
+      "type": "produces"
+    },
+    {
+      "from": "workers",
+      "to": "worker.bootstrap-launcher",
+      "type": "owns"
+    },
+    {
+      "from": "founder_login",
+      "to": "anny",
+      "type": "uses"
+    },
+    {
+      "from": "anny",
+      "to": "mission",
+      "type": "creates"
+    },
+    {
+      "from": "mission",
+      "to": "planner",
+      "type": "requires"
+    },
+    {
+      "from": "planner",
+      "to": "workers",
+      "type": "coordinates"
+    },
+    {
+      "from": "workers",
+      "to": "evidence",
+      "type": "produces"
+    },
+    {
+      "from": "evidence",
+      "to": "harlemm",
+      "type": "validates"
+    },
+    {
+      "from": "runtime",
+      "to": "commit_mutation",
+      "type": "updates"
+    },
+    {
+      "from": "commit_mutation",
+      "to": "institutional_state",
+      "type": "updates"
+    },
+    {
+      "from": "institutional_state",
+      "to": "citizen",
+      "type": "supports"
+    },
+    {
+      "from": "citizen",
+      "to": "support",
+      "type": "uses"
+    },
+    {
+      "from": "support",
+      "to": "child_citizen",
+      "type": "supports"
+    },
+    {
+      "from": "digital_twins",
+      "to": "atlas_publication",
+      "type": "produces"
+    },
+    {
+      "from": "atlas_publication",
+      "to": "evidence",
+      "type": "produces"
+    },
+    {
+      "from": "certification",
+      "to": "evidence",
+      "type": "validates"
+    },
+    {
+      "from": "mission",
+      "to": "evidence",
+      "type": "produces"
+    },
+    {
+      "from": "planner",
+      "to": "mission",
+      "type": "depends_on"
+    }
+  ],
+  "pending_connections": [
+    {
+      "from": "observatory",
+      "to": null,
+      "note": "Needs Founder Mapping"
+    },
+    {
+      "from": "worker.bootstrap-launcher",
+      "to": null,
+      "note": "Needs Founder Mapping"
+    }
+  ],
+  "publication": {
+    "mode": "continuous_digital_twin",
+    "public_url": "https://conrrad.org/atlas/",
+    "status_url": "https://conrrad.org/atlas/status",
+    "rule": "Frontend consumes model only. UNMAPPED nodes remain visible.",
+    "updated_at": "2026-07-31T00:43:42Z"
+  },
+  "coverage": {
+    "mapped_nodes": 19,
+    "pending_nodes": 7,
+    "pending_connections": 2,
+    "coverage_pct": 73.1,
+    "knowledge_coverage": 73.1,
+    "nodes": 27,
+    "relations": 65,
+    "artifacts": 23,
+    "scenes": 8,
+    "perspectives": 8,
+    "domains": 13,
+    "workers": 4,
+    "runtime": 1,
+    "observatory": 1
+  },
+  "founder_questions": [
+    {
+      "id": "FQ-001",
+      "question": "Who owns Runtime Manifest?",
+      "about_node": "runtime",
+      "gap_class": "CLASS_C",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "WO-ATLAS-006"
+    },
+    {
+      "id": "FQ-002",
+      "question": "Who generates Coordination State?",
+      "about_node": "anny",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "WO-ATLAS-006"
+    },
+    {
+      "id": "FQ-003",
+      "question": "Who consumes this Evidence?",
+      "about_node": "evidence",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "WO-ATLAS-006"
+    },
+    {
+      "id": "FQ-004",
+      "question": "Where does Observatory attach in the institutional tree?",
+      "about_node": "observatory",
+      "gap_class": "CLASS_D",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "WO-ATLAS-006"
+    },
+    {
+      "id": "FQ-AUTO-observatory",
+      "question": "What relationships should connect 'observatory' to the institution?",
+      "about_node": "observatory",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "pending_connections"
+    },
+    {
+      "id": "FQ-AUTO-worker.bootstrap-launcher",
+      "question": "What relationships should connect 'worker.bootstrap-launcher' to the institution?",
+      "about_node": "worker.bootstrap-launcher",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "pending_connections"
+    },
+    {
+      "id": "FQ-OWNER-observatory",
+      "question": "Who owns Observatory?",
+      "about_node": "observatory",
+      "gap_class": "CLASS_C",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_owner"
+    },
+    {
+      "id": "FQ-CONSUME-observatory",
+      "question": "Who consumes Observatory?",
+      "about_node": "observatory",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_consumers"
+    },
+    {
+      "id": "FQ-CONSUME-worker.bootstrap-launcher",
+      "question": "Who consumes bootstrap-launcher?",
+      "about_node": "worker.bootstrap-launcher",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_consumers"
+    },
+    {
+      "id": "FQ-OWNER-planner",
+      "question": "Who owns Planner?",
+      "about_node": "planner",
+      "gap_class": "CLASS_C",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_owner"
+    },
+    {
+      "id": "FQ-OWNER-institutional_state",
+      "question": "Who owns Institutional State?",
+      "about_node": "institutional_state",
+      "gap_class": "CLASS_C",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_owner"
+    },
+    {
+      "id": "FQ-CONSUME-institutional_state",
+      "question": "Who consumes Institutional State?",
+      "about_node": "institutional_state",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_consumers"
+    },
+    {
+      "id": "FQ-OWNER-citizen",
+      "question": "Who owns Citizen?",
+      "about_node": "citizen",
+      "gap_class": "CLASS_C",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_owner"
+    },
+    {
+      "id": "FQ-CONSUME-citizen",
+      "question": "Who consumes Citizen?",
+      "about_node": "citizen",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_consumers"
+    },
+    {
+      "id": "FQ-OWNER-support",
+      "question": "Who owns Support?",
+      "about_node": "support",
+      "gap_class": "CLASS_C",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_owner"
+    },
+    {
+      "id": "FQ-OWNER-child_citizen",
+      "question": "Who owns Child Citizen?",
+      "about_node": "child_citizen",
+      "gap_class": "CLASS_C",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_owner"
+    },
+    {
+      "id": "FQ-CONSUME-child_citizen",
+      "question": "Who consumes Child Citizen?",
+      "about_node": "child_citizen",
+      "gap_class": "CLASS_B",
+      "requires": "Requires Founder",
+      "status": "open",
+      "origin": "missing_consumers"
+    }
+  ],
+  "runtime_discoveries": [
+    {
+      "id": "RD-001",
+      "label": "Runtime Manifest live revision attestation",
+      "about_node": "runtime",
+      "gap_class": "CLASS_E",
+      "requires": "Requires Runtime",
+      "status": "queued",
+      "origin": "WO-ATLAS-006",
+      "confidence": 0.4,
+      "discovery_method": "runtime_observation"
+    },
+    {
+      "id": "RD-002",
+      "label": "HARLEMM attestation field presence on Manifest",
+      "about_node": "harlemm",
+      "gap_class": "CLASS_E",
+      "requires": "Requires HARLEMM",
+      "status": "queued",
+      "origin": "WO-ATLAS-006",
+      "confidence": 0.35,
+      "discovery_method": "contract_observation"
+    },
+    {
+      "id": "RD-003",
+      "label": "Worker online presence vs workers.yaml registry",
+      "about_node": "workers",
+      "gap_class": "CLASS_E",
+      "requires": "Requires Worker",
+      "status": "queued",
+      "origin": "WO-ATLAS-006",
+      "confidence": 0.45,
+      "discovery_method": "worker_registry_observation"
+    }
+  ],
+  "institutional_backlog": [
+    {
+      "id": "BL-NODE-observatory",
+      "tipo": "node",
+      "clase": "CLASS_E",
+      "prioridad": "P1",
+      "owner": "Needs Founder Mapping",
+      "origin": "WORKSTATION/observatory/",
+      "status": "DISCOVERY_REQUIRED",
+      "confidence": 0.3,
+      "discovery_method": "institutional_model",
+      "about_node": "observatory",
+      "label": "Observatory"
+    },
+    {
+      "id": "BL-NODE-worker.bootstrap-launcher",
+      "tipo": "node",
+      "clase": "CLASS_C",
+      "prioridad": "P1",
+      "owner": "ANNY",
+      "origin": "coordination/workers.yaml",
+      "status": "UNMAPPED",
+      "confidence": 0.3,
+      "discovery_method": "institutional_model",
+      "about_node": "worker.bootstrap-launcher",
+      "label": "bootstrap-launcher"
+    },
+    {
+      "id": "BL-NODE-planner",
+      "tipo": "node",
+      "clase": "CLASS_A",
+      "prioridad": "P0",
+      "owner": "Needs Founder Mapping",
+      "origin": "Needs Founder Mapping",
+      "status": "UNMAPPED",
+      "confidence": 0.3,
+      "discovery_method": "institutional_model",
+      "about_node": "planner",
+      "label": "Planner"
+    },
+    {
+      "id": "BL-NODE-institutional_state",
+      "tipo": "node",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Needs Founder Mapping",
+      "origin": "coordination/",
+      "status": "UNMAPPED",
+      "confidence": 0.3,
+      "discovery_method": "institutional_model",
+      "about_node": "institutional_state",
+      "label": "Institutional State"
+    },
+    {
+      "id": "BL-NODE-citizen",
+      "tipo": "node",
+      "clase": "CLASS_C",
+      "prioridad": "P1",
+      "owner": "Needs Founder Mapping",
+      "origin": "Needs Founder Mapping",
+      "status": "UNMAPPED",
+      "confidence": 0.3,
+      "discovery_method": "institutional_model",
+      "about_node": "citizen",
+      "label": "Citizen"
+    },
+    {
+      "id": "BL-NODE-support",
+      "tipo": "node",
+      "clase": "CLASS_A",
+      "prioridad": "P0",
+      "owner": "Needs Founder Mapping",
+      "origin": "Needs Founder Mapping",
+      "status": "UNMAPPED",
+      "confidence": 0.3,
+      "discovery_method": "institutional_model",
+      "about_node": "support",
+      "label": "Support"
+    },
+    {
+      "id": "BL-NODE-child_citizen",
+      "tipo": "node",
+      "clase": "CLASS_D",
+      "prioridad": "P1",
+      "owner": "Needs Founder Mapping",
+      "origin": "Needs Founder Mapping",
+      "status": "UNMAPPED",
+      "confidence": 0.3,
+      "discovery_method": "institutional_model",
+      "about_node": "child_citizen",
+      "label": "Child Citizen"
+    },
+    {
+      "id": "BL-REL-observatory-None",
+      "tipo": "relationship",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Needs Founder Mapping",
+      "origin": "pending_connections",
+      "status": "PENDING",
+      "confidence": 0.25,
+      "discovery_method": "absence_of_edge",
+      "about_node": "observatory",
+      "label": "Pending connection from observatory"
+    },
+    {
+      "id": "BL-REL-worker.bootstrap-launcher-None",
+      "tipo": "relationship",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Needs Founder Mapping",
+      "origin": "pending_connections",
+      "status": "PENDING",
+      "confidence": 0.25,
+      "discovery_method": "absence_of_edge",
+      "about_node": "worker.bootstrap-launcher",
+      "label": "Pending connection from worker.bootstrap-launcher"
+    },
+    {
+      "id": "BL-FQ-001",
+      "tipo": "founder_question",
+      "clase": "CLASS_C",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "WO-ATLAS-006",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "runtime",
+      "label": "Who owns Runtime Manifest?"
+    },
+    {
+      "id": "BL-FQ-002",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "WO-ATLAS-006",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "anny",
+      "label": "Who generates Coordination State?"
+    },
+    {
+      "id": "BL-FQ-003",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "WO-ATLAS-006",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "evidence",
+      "label": "Who consumes this Evidence?"
+    },
+    {
+      "id": "BL-FQ-004",
+      "tipo": "founder_question",
+      "clase": "CLASS_D",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "WO-ATLAS-006",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "observatory",
+      "label": "Where does Observatory attach in the institutional tree?"
+    },
+    {
+      "id": "BL-FQ-AUTO-observatory",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "pending_connections",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "observatory",
+      "label": "What relationships should connect 'observatory' to the institution?"
+    },
+    {
+      "id": "BL-FQ-AUTO-worker.bootstrap-launcher",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "pending_connections",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "worker.bootstrap-launcher",
+      "label": "What relationships should connect 'worker.bootstrap-launcher' to the institution?"
+    },
+    {
+      "id": "BL-FQ-OWNER-observatory",
+      "tipo": "founder_question",
+      "clase": "CLASS_C",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_owner",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "observatory",
+      "label": "Who owns Observatory?"
+    },
+    {
+      "id": "BL-FQ-CONSUME-observatory",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_consumers",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "observatory",
+      "label": "Who consumes Observatory?"
+    },
+    {
+      "id": "BL-FQ-CONSUME-worker.bootstrap-launcher",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_consumers",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "worker.bootstrap-launcher",
+      "label": "Who consumes bootstrap-launcher?"
+    },
+    {
+      "id": "BL-FQ-OWNER-planner",
+      "tipo": "founder_question",
+      "clase": "CLASS_C",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_owner",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "planner",
+      "label": "Who owns Planner?"
+    },
+    {
+      "id": "BL-FQ-OWNER-institutional_state",
+      "tipo": "founder_question",
+      "clase": "CLASS_C",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_owner",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "institutional_state",
+      "label": "Who owns Institutional State?"
+    },
+    {
+      "id": "BL-FQ-CONSUME-institutional_state",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_consumers",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "institutional_state",
+      "label": "Who consumes Institutional State?"
+    },
+    {
+      "id": "BL-FQ-OWNER-citizen",
+      "tipo": "founder_question",
+      "clase": "CLASS_C",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_owner",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "citizen",
+      "label": "Who owns Citizen?"
+    },
+    {
+      "id": "BL-FQ-CONSUME-citizen",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_consumers",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "citizen",
+      "label": "Who consumes Citizen?"
+    },
+    {
+      "id": "BL-FQ-OWNER-support",
+      "tipo": "founder_question",
+      "clase": "CLASS_C",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_owner",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "support",
+      "label": "Who owns Support?"
+    },
+    {
+      "id": "BL-FQ-OWNER-child_citizen",
+      "tipo": "founder_question",
+      "clase": "CLASS_C",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_owner",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "child_citizen",
+      "label": "Who owns Child Citizen?"
+    },
+    {
+      "id": "BL-FQ-CONSUME-child_citizen",
+      "tipo": "founder_question",
+      "clase": "CLASS_B",
+      "prioridad": "P0",
+      "owner": "Founder",
+      "origin": "missing_consumers",
+      "status": "open",
+      "confidence": 0.2,
+      "discovery_method": "uninferrable_relation",
+      "about_node": "child_citizen",
+      "label": "Who consumes Child Citizen?"
+    },
+    {
+      "id": "BL-RD-001",
+      "tipo": "runtime_discovery",
+      "clase": "CLASS_E",
+      "prioridad": "P1",
+      "owner": "Requires Runtime",
+      "origin": "WO-ATLAS-006",
+      "status": "queued",
+      "confidence": 0.4,
+      "discovery_method": "runtime_observation",
+      "about_node": "runtime",
+      "label": "Runtime Manifest live revision attestation"
+    },
+    {
+      "id": "BL-RD-002",
+      "tipo": "runtime_discovery",
+      "clase": "CLASS_E",
+      "prioridad": "P1",
+      "owner": "Requires HARLEMM",
+      "origin": "WO-ATLAS-006",
+      "status": "queued",
+      "confidence": 0.35,
+      "discovery_method": "contract_observation",
+      "about_node": "harlemm",
+      "label": "HARLEMM attestation field presence on Manifest"
+    },
+    {
+      "id": "BL-RD-003",
+      "tipo": "runtime_discovery",
+      "clase": "CLASS_E",
+      "prioridad": "P1",
+      "owner": "Requires Worker",
+      "origin": "WO-ATLAS-006",
+      "status": "queued",
+      "confidence": 0.45,
+      "discovery_method": "worker_registry_observation",
+      "about_node": "workers",
+      "label": "Worker online presence vs workers.yaml registry"
+    }
+  ],
+  "lexicon": {
+    "knowledge_states": {
+      "KNOWN": {
+        "icon": "●",
+        "color": "#1f7a4c",
+        "tooltip": "Institutional knowledge is sufficient to navigate and audit.",
+        "label": "Known"
+      },
+      "PARTIAL": {
+        "icon": "◐",
+        "color": "#2f5d8c",
+        "tooltip": "Object exists; some fields or edges remain incomplete.",
+        "label": "Partial"
+      },
+      "UNMAPPED": {
+        "icon": "○",
+        "color": "#c9a227",
+        "tooltip": "Known to exist or be needed; institutional mapping unfinished. Always visible.",
+        "label": "Unmapped"
+      },
+      "DISCOVERY_REQUIRED": {
+        "icon": "?",
+        "color": "#8a3a3a",
+        "tooltip": "Cannot be completed by inference — requires Founder, Runtime, HARLEMM, or Worker discovery.",
+        "label": "Discovery Required"
+      }
+    },
+    "gap_classes": {
+      "CLASS_A": {
+        "id": "CLASS_A",
+        "label": "Institutional Object Missing",
+        "description": "An expected institutional object is not yet represented as a node."
+      },
+      "CLASS_B": {
+        "id": "CLASS_B",
+        "label": "Missing Relationship",
+        "description": "Objects exist but a required relationship is not mapped."
+      },
+      "CLASS_C": {
+        "id": "CLASS_C",
+        "label": "Incomplete Information",
+        "description": "Node exists with missing fields (owner, RFC, consumers, etc.)."
+      },
+      "CLASS_D": {
+        "id": "CLASS_D",
+        "label": "Institutional Discovery",
+        "description": "Gap discovered by institutional review; needs Founder/ANNY mapping."
+      },
+      "CLASS_E": {
+        "id": "CLASS_E",
+        "label": "Runtime Discovery",
+        "description": "Gap that requires Runtime/HARLEMM/Worker observation — not inference."
+      }
+    },
+    "discovery_requires": [
+      "Requires Founder",
+      "Requires Runtime",
+      "Requires HARLEMM",
+      "Requires Worker"
+    ],
+    "relation_types": {
+      "owns": {
+        "label": "owns",
+        "color": "#1f7a4c"
+      },
+      "uses": {
+        "label": "uses",
+        "color": "#2f5d8c"
+      },
+      "creates": {
+        "label": "creates",
+        "color": "#b06a12"
+      },
+      "depends_on": {
+        "label": "depends_on",
+        "color": "#7a3e8c"
+      },
+      "coordinates": {
+        "label": "coordinates",
+        "color": "#087a8c"
+      },
+      "validates": {
+        "label": "validates",
+        "color": "#5c3d6b"
+      },
+      "updates": {
+        "label": "updates",
+        "color": "#3d6b4f"
+      },
+      "requires": {
+        "label": "requires",
+        "color": "#8a3a3a"
+      },
+      "produces": {
+        "label": "produces",
+        "color": "#b06a12"
+      },
+      "consumes": {
+        "label": "consumes",
+        "color": "#2f5d8c"
+      },
+      "observes": {
+        "label": "observes",
+        "color": "#4a5568"
+      },
+      "supports": {
+        "label": "supports",
+        "color": "#1f4e79"
+      }
+    }
+  },
+  "perspectives": {
+    "prepared": true,
+    "implemented": true,
+    "note": "Perspective layers driven by perspectives.json (WO-ATLAS-004-A).",
+    "cameras": [
+      {
+        "id": "Founder",
+        "label": "Founder",
+        "status": "active"
+      },
+      {
+        "id": "Runtime",
+        "label": "Runtime",
+        "status": "active"
+      },
+      {
+        "id": "Planner",
+        "label": "Planner",
+        "status": "active"
+      },
+      {
+        "id": "Worker",
+        "label": "Worker",
+        "status": "active"
+      },
+      {
+        "id": "Auditor",
+        "label": "Auditor",
+        "status": "active"
+      },
+      {
+        "id": "Citizen",
+        "label": "Citizen",
+        "status": "active"
+      },
+      {
+        "id": "Developer",
+        "label": "Developer",
+        "status": "active"
+      },
+      {
+        "id": "Infrastructure",
+        "label": "Infrastructure",
+        "status": "active"
+      }
+    ]
+  },
+  "institutional_health": {
+    "institution_coverage_pct": 73.1,
+    "knowledge_coverage": 73.1,
+    "known": 19,
+    "partial": 0,
+    "unmapped": 6,
+    "discovery_required": 1,
+    "institutional_debt": 7,
+    "discovery_queue": 3,
+    "founder_questions": 17,
+    "backlog_entries": 29,
+    "nodes": 27,
+    "relations": 65,
+    "artifacts": 23,
+    "scenes": 8,
+    "perspectives": 8,
+    "domains": 13,
+    "workers": 4,
+    "runtime": 1,
+    "observatory": 1,
+    "knowledge_state_counts": {
+      "KNOWN": 19,
+      "PARTIAL": 0,
+      "UNMAPPED": 6,
+      "DISCOVERY_REQUIRED": 1
+    },
+    "institutional_integrity": 73.1,
+    "unmapped_count": 6,
+    "discovery_required_count": 1,
+    "institutional_maturity": {
+      "schema": "conrrad.atlas.institutional_maturity/v1",
+      "wo": "WO-ATLAS-007",
+      "overall": 84.4,
+      "categories": {
+        "Infrastructure": {
+          "score": 100.0,
+          "basis": "knowledge_state",
+          "nodes": [
+            "infrastructure",
+            "runtime",
+            "sully"
+          ],
+          "present": [
+            "infrastructure",
+            "runtime",
+            "sully"
+          ],
+          "missing": []
+        },
+        "Institutional Model": {
+          "score": 87.5,
+          "basis": "knowledge_state",
+          "nodes": [
+            "conrrad",
+            "anny",
+            "governance",
+            "harlemm",
+            "mission",
+            "planner"
+          ],
+          "present": [
+            "conrrad",
+            "anny",
+            "governance",
+            "harlemm",
+            "mission",
+            "planner"
+          ],
+          "missing": []
+        },
+        "Relations": {
+          "score": 100.0,
+          "basis": "relations_per_node",
+          "value": 2.41
+        },
+        "Capabilities": {
+          "score": 75.0,
+          "basis": "knowledge_state",
+          "nodes": [
+            "workers",
+            "planner",
+            "mission",
+            "support",
+            "atlas_publication",
+            "certification"
+          ],
+          "present": [
+            "workers",
+            "planner",
+            "mission",
+            "support",
+            "atlas_publication",
+            "certification"
+          ],
+          "missing": []
+        },
+        "Evidence": {
+          "score": 70.0,
+          "basis": "knowledge_state",
+          "nodes": [
+            "evidence",
+            "observatory",
+            "certification"
+          ],
+          "present": [
+            "evidence",
+            "observatory",
+            "certification"
+          ],
+          "missing": []
+        },
+        "Scenarios": {
+          "score": 100.0,
+          "basis": "scene_count",
+          "value": 8
+        },
+        "Citizen Journey": {
+          "score": 55.0,
+          "basis": "knowledge_state",
+          "nodes": [
+            "citizen_journey",
+            "citizen",
+            "support",
+            "child_citizen",
+            "assets"
+          ],
+          "present": [
+            "citizen_journey",
+            "citizen",
+            "support",
+            "child_citizen",
+            "assets"
+          ],
+          "missing": []
+        },
+        "Operational Twin": {
+          "score": 87.5,
+          "basis": "knowledge_state",
+          "nodes": [
+            "runtime",
+            "commit_mutation",
+            "institutional_state",
+            "digital_twins",
+            "atlas_publication",
+            "founder_login"
+          ],
+          "present": [
+            "runtime",
+            "commit_mutation",
+            "institutional_state",
+            "digital_twins",
+            "atlas_publication",
+            "founder_login"
+          ],
+          "missing": []
+        }
+      },
+      "computed_at": "2026-07-31T00:43:42Z"
+    }
+  },
+  "model_refs": {
+    "scenes": "scenes.json",
+    "perspectives": "perspectives.json",
+    "knowledge_states": "knowledge_states.json",
+    "relation_types": "relation_types.json"
+  },
+  "knowledge_states": {
+    "schema": "conrrad.atlas.knowledge_states/v1",
+    "wo": "WO-ATLAS-004-A",
+    "version": "1.0.0",
+    "states": [
+      {
+        "id": "KNOWN",
+        "label": "Known",
+        "icon": "●",
+        "color": "#1f7a4c",
+        "tooltip": "Institutional knowledge is sufficient to navigate and audit."
+      },
+      {
+        "id": "PARTIAL",
+        "label": "Partial",
+        "icon": "◐",
+        "color": "#2f5d8c",
+        "tooltip": "Object exists; some fields or edges remain incomplete."
+      },
+      {
+        "id": "UNMAPPED",
+        "label": "Unmapped",
+        "icon": "○",
+        "color": "#c9a227",
+        "tooltip": "Known to exist or be needed; institutional mapping unfinished. Always visible."
+      },
+      {
+        "id": "DISCOVERY_REQUIRED",
+        "label": "Discovery Required",
+        "icon": "?",
+        "color": "#8a3a3a",
+        "tooltip": "Cannot be completed by inference — requires Founder, Runtime, HARLEMM, or Worker discovery."
+      }
+    ]
+  },
+  "perspective_model": {
+    "schema": "conrrad.atlas.perspectives/v1",
+    "wo": "WO-ATLAS-007",
+    "version": "1.1.0",
+    "default_perspective": "Founder",
+    "perspectives": [
+      {
+        "id": "Founder",
+        "label": "Founder",
+        "description": "Full institutional navigation. Hides nothing institutional.",
+        "show_domains": [
+          "*"
+        ],
+        "show_node_types": [
+          "*"
+        ],
+        "hide_node_ids": [],
+        "show_relation_types": [
+          "*"
+        ],
+        "show_unmapped": true
+      },
+      {
+        "id": "Runtime",
+        "label": "Runtime",
+        "description": "Runtime synchronization, commit mutation, and closed-loop surfaces.",
+        "show_domains": [
+          "domain.conrrad",
+          "domain.runtime",
+          "domain.anny",
+          "domain.assets",
+          "domain.evidence",
+          "domain.harlemm",
+          "domain.infra",
+          "domain.unmapped"
+        ],
+        "show_node_types": [
+          "*"
+        ],
+        "hide_node_ids": [],
+        "show_relation_types": [
+          "owns",
+          "uses",
+          "updates",
+          "produces",
+          "requires",
+          "coordinates",
+          "validates",
+          "supports"
+        ],
+        "show_unmapped": true
+      },
+      {
+        "id": "Planner",
+        "label": "Planner",
+        "description": "Mission planning and worker coordination. Hides citizen-only surfaces.",
+        "show_domains": [
+          "domain.conrrad",
+          "domain.anny",
+          "domain.workers",
+          "domain.evidence",
+          "domain.governance",
+          "domain.runtime",
+          "domain.unmapped"
+        ],
+        "show_node_types": [
+          "*"
+        ],
+        "hide_node_ids": [
+          "child_citizen"
+        ],
+        "show_relation_types": [
+          "creates",
+          "requires",
+          "coordinates",
+          "produces",
+          "depends_on",
+          "owns",
+          "uses"
+        ],
+        "show_unmapped": true
+      },
+      {
+        "id": "Worker",
+        "label": "Worker",
+        "description": "Worker lifecycle and evidence production.",
+        "show_domains": [
+          "domain.conrrad",
+          "domain.workers",
+          "domain.evidence",
+          "domain.anny",
+          "domain.governance",
+          "domain.unmapped"
+        ],
+        "show_node_types": [
+          "*"
+        ],
+        "hide_node_ids": [],
+        "show_relation_types": [
+          "owns",
+          "creates",
+          "produces",
+          "uses",
+          "requires",
+          "updates",
+          "coordinates"
+        ],
+        "show_unmapped": true
+      },
+      {
+        "id": "Auditor",
+        "label": "Auditor",
+        "description": "Evidence, governance, certification, and validation paths.",
+        "show_domains": [
+          "domain.conrrad",
+          "domain.evidence",
+          "domain.governance",
+          "domain.twins",
+          "domain.runtime",
+          "domain.unmapped"
+        ],
+        "show_node_types": [
+          "*"
+        ],
+        "hide_node_ids": [],
+        "show_relation_types": [
+          "validates",
+          "observes",
+          "depends_on",
+          "produces",
+          "consumes",
+          "owns"
+        ],
+        "show_unmapped": true
+      },
+      {
+        "id": "Citizen",
+        "label": "Citizen",
+        "description": "Citizen journey and support surfaces.",
+        "show_domains": [
+          "domain.conrrad",
+          "domain.citizen",
+          "domain.assets",
+          "domain.evidence",
+          "domain.anny",
+          "domain.unmapped"
+        ],
+        "show_node_types": [
+          "*"
+        ],
+        "hide_node_ids": [],
+        "show_relation_types": [
+          "uses",
+          "consumes",
+          "supports",
+          "produces",
+          "depends_on",
+          "owns"
+        ],
+        "show_unmapped": true
+      },
+      {
+        "id": "Developer",
+        "label": "Developer",
+        "description": "Workers, Atlas publication, evidence, and runtime tooling surfaces.",
+        "show_domains": [
+          "domain.conrrad",
+          "domain.workers",
+          "domain.twins",
+          "domain.evidence",
+          "domain.runtime",
+          "domain.anny",
+          "domain.unmapped"
+        ],
+        "show_node_types": [
+          "*"
+        ],
+        "hide_node_ids": [
+          "child_citizen"
+        ],
+        "show_relation_types": [
+          "owns",
+          "produces",
+          "uses",
+          "updates",
+          "creates",
+          "depends_on",
+          "coordinates"
+        ],
+        "show_unmapped": true
+      },
+      {
+        "id": "Infrastructure",
+        "label": "Infrastructure",
+        "description": "Infrastructure and placement layers.",
+        "show_domains": [
+          "domain.conrrad",
+          "domain.infra",
+          "domain.runtime",
+          "domain.sully",
+          "domain.unmapped"
+        ],
+        "show_node_types": [
+          "*"
+        ],
+        "hide_node_ids": [],
+        "show_relation_types": [
+          "owns",
+          "supports",
+          "requires",
+          "depends_on",
+          "observes",
+          "updates"
+        ],
+        "show_unmapped": true
+      }
+    ]
+  },
+  "scenes": {
+    "schema": "conrrad.atlas.scenes/v1",
+    "wo": "WO-ATLAS-007",
+    "version": "1.1.0",
+    "scenes": [
+      {
+        "id": "Scene-Journey",
+        "label": "Institutional Journey",
+        "description": "Founder Login → ANNY → Mission → Planner → Workers → Evidence → HARLEMM → Runtime → Commit Mutation → Institutional State → Citizen → Support → Child Citizen",
+        "ordered": true,
+        "node_ids": [
+          "founder_login",
+          "anny",
+          "mission",
+          "planner",
+          "workers",
+          "evidence",
+          "harlemm",
+          "runtime",
+          "commit_mutation",
+          "institutional_state",
+          "citizen",
+          "support",
+          "child_citizen"
+        ],
+        "relation_types": [
+          "uses",
+          "creates",
+          "requires",
+          "coordinates",
+          "produces",
+          "validates",
+          "updates",
+          "supports"
+        ]
+      },
+      {
+        "id": "Scene-Mission",
+        "label": "Mission Lifecycle",
+        "description": "Mission creation, planning, worker execution, and evidence.",
+        "node_ids": [
+          "anny",
+          "mission",
+          "planner",
+          "workers",
+          "evidence",
+          "governance"
+        ],
+        "relation_types": [
+          "creates",
+          "requires",
+          "coordinates",
+          "produces",
+          "depends_on",
+          "owns"
+        ]
+      },
+      {
+        "id": "Scene-Evidence",
+        "label": "Evidence Lifecycle",
+        "description": "Evidence production, validation, observation, and twin projection.",
+        "node_ids": [
+          "workers",
+          "evidence",
+          "harlemm",
+          "digital_twins",
+          "observatory",
+          "certification"
+        ],
+        "relation_types": [
+          "produces",
+          "validates",
+          "observes",
+          "uses"
+        ]
+      },
+      {
+        "id": "Scene-Certification",
+        "label": "Certification Lifecycle",
+        "description": "Governance certification path and evidence attestation.",
+        "node_ids": [
+          "governance",
+          "certification",
+          "evidence",
+          "anny",
+          "digital_twins"
+        ],
+        "relation_types": [
+          "owns",
+          "validates",
+          "depends_on",
+          "produces"
+        ]
+      },
+      {
+        "id": "Scene-Citizen",
+        "label": "Citizen Support",
+        "description": "Citizen journey through support to child citizen surfaces.",
+        "node_ids": [
+          "citizen_journey",
+          "citizen",
+          "support",
+          "child_citizen",
+          "assets",
+          "anny",
+          "evidence"
+        ],
+        "relation_types": [
+          "owns",
+          "uses",
+          "supports",
+          "consumes",
+          "produces"
+        ]
+      },
+      {
+        "id": "Scene-Infra",
+        "label": "Infrastructure Deployment",
+        "description": "Infrastructure hosts runtime and compute under institutional constraints.",
+        "node_ids": [
+          "infrastructure",
+          "runtime",
+          "sully",
+          "governance",
+          "conrrad",
+          "commit_mutation"
+        ],
+        "relation_types": [
+          "owns",
+          "supports",
+          "depends_on",
+          "requires",
+          "updates"
+        ]
+      },
+      {
+        "id": "Scene-Atlas",
+        "label": "Atlas Publication",
+        "description": "Digital twin continuous publication to the permanent Atlas URL.",
+        "node_ids": [
+          "digital_twins",
+          "atlas_publication",
+          "evidence",
+          "conrrad",
+          "institutional_state"
+        ],
+        "relation_types": [
+          "produces",
+          "supports",
+          "updates",
+          "owns"
+        ]
+      },
+      {
+        "id": "Scene-Evolution",
+        "label": "Institution Evolution",
+        "description": "Institutional state evolution after governed runtime mutation.",
+        "node_ids": [
+          "founder_login",
+          "anny",
+          "runtime",
+          "commit_mutation",
+          "institutional_state",
+          "digital_twins",
+          "unmapped"
+        ],
+        "relation_types": [
+          "uses",
+          "updates",
+          "supports",
+          "owns",
+          "coordinates"
+        ]
+      }
+    ]
+  },
+  "relation_types": {
+    "schema": "conrrad.atlas.relation_types/v1",
+    "wo": "WO-ATLAS-004-A",
+    "version": "1.0.0",
+    "relation_types": [
+      {
+        "id": "owns",
+        "label": "owns",
+        "color": "#1f7a4c"
+      },
+      {
+        "id": "uses",
+        "label": "uses",
+        "color": "#2f5d8c"
+      },
+      {
+        "id": "creates",
+        "label": "creates",
+        "color": "#b06a12"
+      },
+      {
+        "id": "depends_on",
+        "label": "depends_on",
+        "color": "#7a3e8c"
+      },
+      {
+        "id": "coordinates",
+        "label": "coordinates",
+        "color": "#087a8c"
+      },
+      {
+        "id": "validates",
+        "label": "validates",
+        "color": "#5c3d6b"
+      },
+      {
+        "id": "updates",
+        "label": "updates",
+        "color": "#3d6b4f"
+      },
+      {
+        "id": "requires",
+        "label": "requires",
+        "color": "#8a3a3a"
+      },
+      {
+        "id": "produces",
+        "label": "produces",
+        "color": "#b06a12"
+      },
+      {
+        "id": "consumes",
+        "label": "consumes",
+        "color": "#2f5d8c"
+      },
+      {
+        "id": "observes",
+        "label": "observes",
+        "color": "#4a5568"
+      },
+      {
+        "id": "supports",
+        "label": "supports",
+        "color": "#1f4e79"
+      }
+    ]
+  },
+  "model_integrity": {
+    "algorithm": "sha256",
+    "fingerprint": "1be34dd4af597846720fda7fdd0c47b58311dd046fc6f61bc5cba62774a65b98",
+    "computed_at": "2026-07-31T00:43:42Z",
+    "sources": [
+      {
+        "file": "scenes.json",
+        "sha256": "1736f0ec9f7e5aeabb958176f9d024d59124b02dc0771e718c140e55d0ca1eee",
+        "bytes": 3420
+      },
+      {
+        "file": "perspectives.json",
+        "sha256": "aecc64a677b58b30db9029bf391fd4f12e7d38662834c767abdafe3ef1ebf345",
+        "bytes": 4231
+      },
+      {
+        "file": "knowledge_states.json",
+        "sha256": "8c7260ef035b700e63c9ecfac899045011cbcb7c24b95764407496e52893cd93",
+        "bytes": 937
+      },
+      {
+        "file": "relation_types.json",
+        "sha256": "b4f88685f46d073ce55eaead27c171199ba79dc9ce95aa353e57d13bbd65401a",
+        "bytes": 920
+      },
+      {
+        "file": "institutional_scenes.yaml",
+        "sha256": "abba5c9ee7535c2f5997e4df0649e5d835c6421844c0e73492872de5d6897dd0",
+        "bytes": 2809
+      },
+      {
+        "file": "institutional_relationships.yaml",
+        "sha256": "0bbd587014bad1e9195084ed1ed2e1f8a27ce1725f6e438e2f4d5d918c197a8f",
+        "bytes": 4055
+      },
+      {
+        "file": "knowledge_state.yaml",
+        "sha256": "08e75c4c97bc7403a749345df3bd222561fa688de0c876b2d75a4e78b44531bd",
+        "bytes": 730
+      }
+    ]
+  },
+  "institutional_maturity": {
+    "schema": "conrrad.atlas.institutional_maturity/v1",
+    "wo": "WO-ATLAS-007",
+    "overall": 84.4,
+    "categories": {
+      "Infrastructure": {
+        "score": 100.0,
+        "basis": "knowledge_state",
+        "nodes": [
+          "infrastructure",
+          "runtime",
+          "sully"
+        ],
+        "present": [
+          "infrastructure",
+          "runtime",
+          "sully"
+        ],
+        "missing": []
+      },
+      "Institutional Model": {
+        "score": 87.5,
+        "basis": "knowledge_state",
+        "nodes": [
+          "conrrad",
+          "anny",
+          "governance",
+          "harlemm",
+          "mission",
+          "planner"
+        ],
+        "present": [
+          "conrrad",
+          "anny",
+          "governance",
+          "harlemm",
+          "mission",
+          "planner"
+        ],
+        "missing": []
+      },
+      "Relations": {
+        "score": 100.0,
+        "basis": "relations_per_node",
+        "value": 2.41
+      },
+      "Capabilities": {
+        "score": 75.0,
+        "basis": "knowledge_state",
+        "nodes": [
+          "workers",
+          "planner",
+          "mission",
+          "support",
+          "atlas_publication",
+          "certification"
+        ],
+        "present": [
+          "workers",
+          "planner",
+          "mission",
+          "support",
+          "atlas_publication",
+          "certification"
+        ],
+        "missing": []
+      },
+      "Evidence": {
+        "score": 70.0,
+        "basis": "knowledge_state",
+        "nodes": [
+          "evidence",
+          "observatory",
+          "certification"
+        ],
+        "present": [
+          "evidence",
+          "observatory",
+          "certification"
+        ],
+        "missing": []
+      },
+      "Scenarios": {
+        "score": 100.0,
+        "basis": "scene_count",
+        "value": 8
+      },
+      "Citizen Journey": {
+        "score": 55.0,
+        "basis": "knowledge_state",
+        "nodes": [
+          "citizen_journey",
+          "citizen",
+          "support",
+          "child_citizen",
+          "assets"
+        ],
+        "present": [
+          "citizen_journey",
+          "citizen",
+          "support",
+          "child_citizen",
+          "assets"
+        ],
+        "missing": []
+      },
+      "Operational Twin": {
+        "score": 87.5,
+        "basis": "knowledge_state",
+        "nodes": [
+          "runtime",
+          "commit_mutation",
+          "institutional_state",
+          "digital_twins",
+          "atlas_publication",
+          "founder_login"
+        ],
+        "present": [
+          "runtime",
+          "commit_mutation",
+          "institutional_state",
+          "digital_twins",
+          "atlas_publication",
+          "founder_login"
+        ],
+        "missing": []
+      }
+    },
+    "computed_at": "2026-07-31T00:43:42Z"
+  }
+}

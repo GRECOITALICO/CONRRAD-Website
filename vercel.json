@@ -20,6 +20,31 @@
       "dest": "/demo/$1"
     },
     {
+      "src": "/yc-demo",
+      "status": 308,
+      "headers": {
+        "Location": "/demo/"
+      }
+    },
+    {
+      "src": "/yc-demo/(.*)",
+      "status": 308,
+      "headers": {
+        "Location": "/demo/"
+      }
+    },
+    {
+      "src": "/atlas",
+      "status": 308,
+      "headers": {
+        "Location": "/atlas/"
+      }
+    },
+    {
+      "src": "/atlas/(.*)",
+      "dest": "/atlas/$1"
+    },
+    {
       "src": "/.*",
       "dest": "/index.html"
     }

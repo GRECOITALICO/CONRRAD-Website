@@ -8,16 +8,21 @@ export const FOUNDER = {
   x: 'https://x.com/conrradlab',
 }
 
-/** Public product surfaces only — never link private monorepo trees. */
+/** Public product surfaces — Canon v1.0 destinations. */
 export const PUBLIC_PRODUCT = {
+  /** Technical alias repo only — never marketed as the product noun. */
   sdk: 'https://github.com/GRECOITALICO/CONRRAD-SDK',
   docsHome: '/documentation',
   docsRepo: 'https://github.com/GRECOITALICO/CONRRAD-Docs',
   whitepaper: '/whitepaper',
   whitepaperPdf: '/CONRRAD_INSTITUTIONAL_WHITEPAPER_v1.pdf',
   whitepaperMd: '/CONRRAD_INSTITUTIONAL_WHITEPAPER_v1.md',
-  evidence: '/evidence',
-  architecture: '/architecture',
+  evidence: '/trust#evidence',
+  architecture: '/citizen#architecture',
+  citizen: '/citizen',
+  trust: '/trust',
+  atlas: '/atlas/',
+  demo: '/demo/',
   examples: 'https://github.com/GRECOITALICO/CONRRAD-Examples',
 } as const
 
@@ -49,7 +54,6 @@ export function readGuestSession(): GuestSession | null {
 }
 
 export function startGuestSession(): GuestSession {
-  // Purge any prior insecure session keys
   sessionStorage.removeItem('conrrad_guest_session_v0')
   const session: GuestSession = { role: 'guest', at: Date.now() }
   sessionStorage.setItem(GUEST_SESSION_KEY, JSON.stringify(session))

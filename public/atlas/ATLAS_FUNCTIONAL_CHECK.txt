@@ -1,0 +1,37 @@
+ATLAS_FUNCTIONAL_CHECK
+target=http://127.0.0.1:4577/atlas/
+label=
+js_errors=0
+PASS | Main thread stays responsive | no blocking loop
+PASS | Institutional tour entry point present | available
+PASS | Navigation: Atlas app opens | app visible
+PASS | No model load error | none
+FAIL | Atlas status READY | ATLAS STATUS · OUT_OF_SYNC
+PASS | Graph renders nodes | 27 nodes
+PASS | Graph renders relations | 65 relations
+PASS | atlas.json integrity: nodes and relations | 27 nodes / 65 relations
+PASS | atlas.json integrity: model fingerprint | 3fec27dd79f8b3ff
+PASS | Knowledge states present on every node | all nodes carry a knowledge state
+PASS | Institutional health metrics available | coverage 73.1%
+PASS | Health panel populated | 7 rows
+PASS | Metrics panel populated | 8 rows
+PASS | Maturity panel populated | 9 rows
+PASS | Institutional tests panel populated | 6 rows
+PASS | Domains panel populated | 1 rows
+PASS | Knowledge legend populated | 4 rows
+PASS | Relations legend populated | 12 rows
+PASS | Scene selector populated | 9 scenes
+PASS | Perspective selector populated | 6 perspectives
+PASS | Inspector shows the selected node | Identityconrrad · #0 · CONRRADDescriptionInstitutional organ
+PASS | Search returns hits | 22 hits
+PASS | Timeline switches era | Deeper planner mapping, fuller citizen support, an
+PASS | Tree view renders the hierarchy | 27 tree nodes
+PASS | Graph view restored | graph visible
+PASS | Play starts the institutional journey | STEP 01 · 1 / 8Mission authorizationWHO. Founder → ANNYWHAT.
+PASS | Atlas carries no consumer artefact | product surface is clean
+PASS | Atlas stays usable | 27 nodes
+PASS | No white screen | 3960 visible characters
+PASS | Responsive: no horizontal overflow at 390px | content 390px in 390px viewport
+PASS | No JavaScript errors | clean
+SUMMARY 30/31
+VERDICT DEGRADED

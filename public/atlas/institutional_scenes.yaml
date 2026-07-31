@@ -1,0 +1,143 @@
+schema: conrrad.atlas.institutional_scenes/v1
+wo: WO-ATLAS-007
+version: 1.1.0
+scenes:
+- id: Scene-Journey
+  label: Institutional Journey
+  description: Founder Login → ANNY → Mission → Planner → Workers → Evidence → HARLEMM
+    → Runtime → Commit Mutation → Institutional State → Citizen → Support → Child
+    Citizen
+  ordered: true
+  node_ids:
+  - founder_login
+  - anny
+  - mission
+  - planner
+  - workers
+  - evidence
+  - harlemm
+  - runtime
+  - commit_mutation
+  - institutional_state
+  - citizen
+  - support
+  - child_citizen
+  relation_types:
+  - uses
+  - creates
+  - requires
+  - coordinates
+  - produces
+  - validates
+  - updates
+  - supports
+- id: Scene-Mission
+  label: Mission Lifecycle
+  description: Mission creation, planning, worker execution, and evidence.
+  node_ids:
+  - anny
+  - mission
+  - planner
+  - workers
+  - evidence
+  - governance
+  relation_types:
+  - creates
+  - requires
+  - coordinates
+  - produces
+  - depends_on
+  - owns
+- id: Scene-Evidence
+  label: Evidence Lifecycle
+  description: Evidence production, validation, observation, and twin projection.
+  node_ids:
+  - workers
+  - evidence
+  - harlemm
+  - digital_twins
+  - observatory
+  - certification
+  relation_types:
+  - produces
+  - validates
+  - observes
+  - uses
+- id: Scene-Certification
+  label: Certification Lifecycle
+  description: Governance certification path and evidence attestation.
+  node_ids:
+  - governance
+  - certification
+  - evidence
+  - anny
+  - digital_twins
+  relation_types:
+  - owns
+  - validates
+  - depends_on
+  - produces
+- id: Scene-Citizen
+  label: Citizen Support
+  description: Citizen journey through support to child citizen surfaces.
+  node_ids:
+  - citizen_journey
+  - citizen
+  - support
+  - child_citizen
+  - assets
+  - anny
+  - evidence
+  relation_types:
+  - owns
+  - uses
+  - supports
+  - consumes
+  - produces
+- id: Scene-Infra
+  label: Infrastructure Deployment
+  description: Infrastructure hosts runtime and compute under institutional constraints.
+  node_ids:
+  - infrastructure
+  - runtime
+  - sully
+  - governance
+  - conrrad
+  - commit_mutation
+  relation_types:
+  - owns
+  - supports
+  - depends_on
+  - requires
+  - updates
+- id: Scene-Atlas
+  label: Atlas Publication
+  description: Digital twin continuous publication to the permanent Atlas URL.
+  node_ids:
+  - digital_twins
+  - atlas_publication
+  - evidence
+  - conrrad
+  - institutional_state
+  relation_types:
+  - produces
+  - supports
+  - updates
+  - owns
+- id: Scene-Evolution
+  label: Institution Evolution
+  description: Institutional state evolution after governed runtime mutation.
+  node_ids:
+  - founder_login
+  - anny
+  - runtime
+  - commit_mutation
+  - institutional_state
+  - digital_twins
+  - unmapped
+  relation_types:
+  - uses
+  - updates
+  - supports
+  - owns
+  - coordinates

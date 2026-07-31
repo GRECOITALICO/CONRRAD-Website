@@ -309,8 +309,8 @@ export function DonatePage() {
   const TOTAL_USD = 0
   return (
     <div className="mx-auto max-w-3xl px-5 py-14">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold mb-3">Sustainability</p>
-      <h1 className="font-display text-4xl font-bold tracking-tight mb-6">Donate</h1>
+      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold mb-3">Utility</p>
+      <h1 className="font-display text-4xl font-bold tracking-tight mb-6">Sustainability</h1>
       <div className="border border-line bg-white p-6 mb-10">
         <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-mute mb-2">
           Total received
@@ -371,10 +371,10 @@ export function DonatePage() {
       </p>
       <div className="mt-8">
         <Link
-          to="/economic-model"
+          to="/trust#economy"
           className="text-xs font-semibold uppercase tracking-[0.14em] text-accent hover:underline"
         >
-          Read economic model →
+          Trust · Economic boundary →
         </Link>
       </div>
     </div>

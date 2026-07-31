@@ -55,10 +55,13 @@ export default function Roadmap() {
 
       <p className="mt-10 text-xs text-mute">
         Principles:{' '}
-        <Link to="/docs" className="text-accent hover:underline">
-          Visible Evolution
-        </Link>{' '}
-        · Single Web Surface
+        <Link to="/documentation" className="text-accent hover:underline">
+          Documentation
+        </Link>
+        {' · '}
+        <Link to="/citizen" className="text-accent hover:underline">
+          Citizen
+        </Link>
       </p>
     </div>
   )

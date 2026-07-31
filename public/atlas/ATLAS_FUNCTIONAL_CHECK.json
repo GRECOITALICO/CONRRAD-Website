@@ -1,0 +1,165 @@
+{
+  "target": "http://127.0.0.1:4577/atlas/",
+  "label": null,
+  "js_errors": [],
+  "results": [
+    {
+      "name": "Main thread stays responsive",
+      "pass": true,
+      "detail": "no blocking loop"
+    },
+    {
+      "name": "Institutional tour entry point present",
+      "pass": true,
+      "detail": "available"
+    },
+    {
+      "name": "Navigation: Atlas app opens",
+      "pass": true,
+      "detail": "app visible"
+    },
+    {
+      "name": "No model load error",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "name": "Atlas status READY",
+      "pass": false,
+      "detail": "ATLAS STATUS \u00b7 OUT_OF_SYNC"
+    },
+    {
+      "name": "Graph renders nodes",
+      "pass": true,
+      "detail": "27 nodes"
+    },
+    {
+      "name": "Graph renders relations",
+      "pass": true,
+      "detail": "65 relations"
+    },
+    {
+      "name": "atlas.json integrity: nodes and relations",
+      "pass": true,
+      "detail": "27 nodes / 65 relations"
+    },
+    {
+      "name": "atlas.json integrity: model fingerprint",
+      "pass": true,
+      "detail": "3fec27dd79f8b3ff"
+    },
+    {
+      "name": "Knowledge states present on every node",
+      "pass": true,
+      "detail": "all nodes carry a knowledge state"
+    },
+    {
+      "name": "Institutional health metrics available",
+      "pass": true,
+      "detail": "coverage 73.1%"
+    },
+    {
+      "name": "Health panel populated",
+      "pass": true,
+      "detail": "7 rows"
+    },
+    {
+      "name": "Metrics panel populated",
+      "pass": true,
+      "detail": "8 rows"
+    },
+    {
+      "name": "Maturity panel populated",
+      "pass": true,
+      "detail": "9 rows"
+    },
+    {
+      "name": "Institutional tests panel populated",
+      "pass": true,
+      "detail": "6 rows"
+    },
+    {
+      "name": "Domains panel populated",
+      "pass": true,
+      "detail": "1 rows"
+    },
+    {
+      "name": "Knowledge legend populated",
+      "pass": true,
+      "detail": "4 rows"
+    },
+    {
+      "name": "Relations legend populated",
+      "pass": true,
+      "detail": "12 rows"
+    },
+    {
+      "name": "Scene selector populated",
+      "pass": true,
+      "detail": "9 scenes"
+    },
+    {
+      "name": "Perspective selector populated",
+      "pass": true,
+      "detail": "6 perspectives"
+    },
+    {
+      "name": "Inspector shows the selected node",
+      "pass": true,
+      "detail": "Identityconrrad \u00b7 #0 \u00b7 CONRRADDescriptionInstitutional organ"
+    },
+    {
+      "name": "Search returns hits",
+      "pass": true,
+      "detail": "22 hits"
+    },
+    {
+      "name": "Timeline switches era",
+      "pass": true,
+      "detail": "Deeper planner mapping, fuller citizen support, an"
+    },
+    {
+      "name": "Tree view renders the hierarchy",
+      "pass": true,
+      "detail": "27 tree nodes"
+    },
+    {
+      "name": "Graph view restored",
+      "pass": true,
+      "detail": "graph visible"
+    },
+    {
+      "name": "Play starts the institutional journey",
+      "pass": true,
+      "detail": "STEP 01 \u00b7 1 / 8Mission authorizationWHO. Founder \u2192 ANNYWHAT."
+    },
+    {
+      "name": "Atlas carries no consumer artefact",
+      "pass": true,
+      "detail": "product surface is clean"
+    },
+    {
+      "name": "Atlas stays usable",
+      "pass": true,
+      "detail": "27 nodes"
+    },
+    {
+      "name": "No white screen",
+      "pass": true,
+      "detail": "3960 visible characters"
+    },
+    {
+      "name": "Responsive: no horizontal overflow at 390px",
+      "pass": true,
+      "detail": "content 390px in 390px viewport"
+    },
+    {
+      "name": "No JavaScript errors",
+      "pass": true,
+      "detail": "clean"
+    }
+  ],
+  "passed": 30,
+  "total": 31,
+  "verdict": "DEGRADED"
+}

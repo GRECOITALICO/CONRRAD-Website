@@ -1,0 +1,19 @@
+{
+  "schema": "conrrad.atlas.relation_types/v1",
+  "wo": "WO-ATLAS-004-A",
+  "version": "1.0.0",
+  "relation_types": [
+    { "id": "owns", "label": "owns", "color": "#1f7a4c" },
+    { "id": "uses", "label": "uses", "color": "#2f5d8c" },
+    { "id": "creates", "label": "creates", "color": "#b06a12" },
+    { "id": "depends_on", "label": "depends_on", "color": "#7a3e8c" },
+    { "id": "coordinates", "label": "coordinates", "color": "#087a8c" },
+    { "id": "validates", "label": "validates", "color": "#5c3d6b" },
+    { "id": "updates", "label": "updates", "color": "#3d6b4f" },
+    { "id": "requires", "label": "requires", "color": "#8a3a3a" },
+    { "id": "produces", "label": "produces", "color": "#b06a12" },
+    { "id": "consumes", "label": "consumes", "color": "#2f5d8c" },
+    { "id": "observes", "label": "observes", "color": "#4a5568" },
+    { "id": "supports", "label": "supports", "color": "#1f4e79" }
+  ]
+}

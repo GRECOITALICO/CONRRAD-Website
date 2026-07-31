@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "conrrad.atlas.digital_twin/v1",
+  "title": "CONRRAD Atlas Institutional Digital Twin",
+  "type": "object",
+  "required": ["schema", "version", "lexicon", "nodes", "relations", "institutional_health"],
+  "properties": {
+    "schema": { "type": "string", "const": "conrrad.atlas.digital_twin/v1" },
+    "version": { "type": "string" },
+    "lexicon": {
+      "type": "object",
+      "required": ["knowledge_states", "gap_classes", "discovery_requires"],
+      "properties": {
+        "knowledge_states": { "type": "object" },
+        "gap_classes": { "type": "object" },
+        "discovery_requires": { "type": "array" }
+      }
+    },
+    "perspectives": {
+      "type": "object",
+      "properties": {
+        "prepared": { "type": "boolean" },
+        "implemented": { "type": "boolean" },
+        "cameras": { "type": "array" }
+      }
+    },
+    "institutional_backlog": { "type": "array" },
+    "founder_questions": { "type": "array" },
+    "runtime_discoveries": { "type": "array" },
+    "pending_connections": { "type": "array" },
+    "institutional_health": { "type": "object" },
+    "coverage": { "type": "object" },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "atlas_index", "label", "type", "description", "status", "artifact", "source", "knowledge_state"],
+        "properties": {
+          "id": { "type": "string" },
+          "atlas_index": { "type": "integer" },
+          "label": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "type": "string" },
+          "artifact": { "type": "string" },
+          "source": { "type": "string" },
+          "knowledge_state": {
+            "type": "string",
+            "enum": ["KNOWN", "PARTIAL", "PENDING", "UNKNOWN"]
+          },
+          "gap_class": {
+            "type": ["string", "null"],
+            "enum": ["CLASS_A", "CLASS_B", "CLASS_C", "CLASS_D", "CLASS_E", null]
+          },
+          "source_artifact": { "type": ["string", "null"] },
+          "rfc": { "type": ["string", "null"] },
+          "decision": { "type": ["string", "null"] },
+          "owner": { "type": ["string", "null"] },
+          "domain": { "type": ["string", "null"] },
+          "dependencies": { "type": "array" },
+          "consumers": { "type": "array" },
+          "providers": { "type": "array" },
+          "open_source": { "type": ["boolean", "null"] },
+          "parent": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "type"],
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "type": { "type": "string", "enum": ["owns", "uses", "creates", "depends_on"] }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

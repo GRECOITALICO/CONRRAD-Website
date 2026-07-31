@@ -772,11 +772,11 @@ export const FAQ = [
   },
   {
     q: 'What already works?',
-    a: 'Architecture specs (CAS), scheduler Freeze C0, evidence regenerators, runtime health on Node-01, open SDK path, institution Asset Registry (inside institution/), and this digital-twin website. Product UIs for execution/agents are still rolling out. Monorepo-wide Asset migration is incomplete.',
+    a: 'CAS architecture specs, scheduler Freeze C0, evidence regenerators, host health on Node-01, Birth package path, Atlas + Demo on conrrad.org, and this Website Canon surface. Execution UIs are still rolling out.',
   },
   {
-    q: 'What is Nikkole?',
-    a: 'Research / draft citizen-application concept. Status: Research · NOT AVAILABLE. Mentioning it does not mean it is ready — we do not use empty “Available” marketing.',
+    q: 'What is the product?',
+    a: 'The Citizen — a persistent institutional identity. Atlas and Demo are sibling surfaces. Birth package names are technical aliases only.',
   },
   {
     q: 'Who is the founder?',
@@ -784,14 +784,14 @@ export const FAQ = [
   },
   {
     q: 'Can I sign in as Founder / Admin?',
-    a: 'No. Until Runtime Identity exists, the surface only offers Guest Session (visitor). No privileged demo accounts.',
+    a: 'No. Until institutional identity auth exists, the surface only offers Guest Session (visitor). No privileged demo accounts.',
   },
   {
     q: 'How do you make money?',
-    a: 'CAS-4: local development stays free. Monetization begins at cloud deploy / institutional attestation. Self-serve billing is not live yet. Donations fund independence until then.',
+    a: 'CAS-4: local Birth stays free. Monetization begins at cloud deploy / institutional attestation. Self-serve billing is not live yet. Optional sustainability donations fund independence until then.',
   },
   {
-    q: 'Why donations?',
-    a: 'CONRRAD is community funded. Donations finance documentation, infrastructure, testing, runtime, research, and certification while preparing accelerator applications. Total received is published (including 0 USD).',
+    q: 'Why sustainability donations?',
+    a: 'Optional community funding for documentation, infrastructure, testing, research, and certification. Total received is published (including 0 USD). Donations are never a primary product CTA.',
   },
 ]

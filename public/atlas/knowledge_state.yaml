@@ -1,0 +1,24 @@
+schema: conrrad.atlas.knowledge_state/v1
+wo: WO-ATLAS-005
+version: "1.0.0"
+states:
+  - id: KNOWN
+    label: Known
+    icon: "●"
+    color: "#1f7a4c"
+    tooltip: Institutional knowledge is sufficient to navigate and audit.
+  - id: PARTIAL
+    label: Partial
+    icon: "◐"
+    color: "#2f5d8c"
+    tooltip: Object exists; some fields or edges remain incomplete.
+  - id: UNMAPPED
+    label: Unmapped
+    icon: "○"
+    color: "#c9a227"
+    tooltip: Known to exist or be needed; institutional mapping unfinished. Always visible.
+  - id: DISCOVERY_REQUIRED
+    label: Discovery Required
+    icon: "?"
+    color: "#8a3a3a"
+    tooltip: Cannot be completed by inference — requires Founder, Runtime, HARLEMM, or Worker discovery.
