@@ -22,9 +22,39 @@ export const PUBLIC_PRODUCT = {
   trust: '/trust',
   atlas: '/atlas/',
   demo: '/demo/',
+  download: '/download/',
+  releases: '/releases/',
+  install: '/install/',
+  verify: '/verify/',
   glossary: '/documentation/glossary',
   faq: '/documentation/faq',
 } as const
+
+/** Citizen Seed public distribution — INT-CITIZEN-PUBLIC-RELEASE-001 */
+export const CITIZEN_PUBLIC = {
+  repo: 'https://github.com/GRECOITALICO/citizen',
+  githubRelease: 'https://github.com/GRECOITALICO/citizen/releases/latest',
+  githubReleaseChecksums:
+    'https://github.com/GRECOITALICO/citizen/releases/latest',
+  currentStable: {
+    name: 'Citizen Seed 0.1',
+    tag: 'v0.1.0',
+    date: '2026-08-01',
+    current: true,
+  },
+  releases: [
+    {
+      name: 'Citizen Seed 0.1',
+      tag: 'v0.1.0',
+      date: '2026-08-01',
+      current: true,
+    },
+  ],
+} as const
+
+/** Compat aliases used by app shell surfaces */
+export const ATLAS_URL = PUBLIC_PRODUCT.atlas
+export const DEMO_URL = PUBLIC_PRODUCT.demo
 
 export const SOCIALS = [
   { label: 'GitHub', href: FOUNDER.github },

@@ -1,164 +1,58 @@
 %PDF-1.4
-1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
-endobj
-2 0 obj
-<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
-endobj
-3 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
-endobj
-4 0 obj
-<< /Length 1803 >>
-stream
-BT /F1 10 Tf 50 800 Td 12 TL
-( CONRRAD ? Institutional Governance Infrastructure) Tj
-T* () Tj
-T* (Official Whitepaper v1.0  ) Tj
-T* (Status: DEFINITIVE - Public Release Candidate  ) Tj
-T* (Owner: GRECOITALICO  ) Tj
-T* (Date: 2026-07-27) Tj
-T* () Tj
-T* (---) Tj
-T* () Tj
-T* ( 1. Problem) Tj
-T* () Tj
-T* (Autonomous AI systems fail in production when:) Tj
-T* () Tj
-T* (1. Identity drifts across LLM providers) Tj
-T* (2. Models invent policy instead of obeying governance) Tj
-T* (3. Inference cost and latency are uncontrolled) Tj
-T* (4. Memory is anecdotal rather than measured) Tj
-T* (5. Evidence is a screenshot, not a replayable artifact) Tj
-T* () Tj
-T* (The market does not need more answers. It needs governed work.) Tj
-T* () Tj
-T* ( 2. Architecture) Tj
-T* () Tj
-T* () Tj
-T* (Human / IDE) Tj
-T* (  -> HIT \(translation only\)) Tj
-T* (    -> HARLEMM \(deterministic governance\)) Tj
-T* (         -> Deterministic tasks) Tj
-T* (         -> InferenceRequired -> SULLY) Tj
-T* (    -> ANNY \(institutional identity\)) Tj
-T* (    -> Institutional Memory \(measured vectors\)) Tj
-T* (    -> Evidence Factory \(append-only, SHA-256\)) Tj
-T* () Tj
-T* () Tj
-T* (Public product surfaces: Docs - SDK - Website - Whitepaper - Examples  ) Tj
-T* (Private institutional surfaces: Core - ANNY - HARLEMM - SULLY - Memory) Tj
-T* () Tj
-T* ( 3. Evidence First) Tj
-T* () Tj
-T* (Every institutional claim must be append-only, hash-addressed, replayable, DTO-linked, and time) Tj
-T* (line-ordered.  ) Tj
-T* (CONRRAD does not invent green checks. Evidence precedes claim.) Tj
-T* () Tj
-T* ( 4. Institutional Memory) Tj
-T* () Tj
-T* (Canonical memory is measured in Qdrant collections with explicit writers, embedding contracts, ) Tj
-T* (latency, and recall.  ) Tj
-T* (Memory is infrastructure, not chat history folklore.) Tj
+1 0 obj<< /Type /Catalog /Pages 2 0 R >>endobj
+2 0 obj<< /Type /Pages /Kids [3 0 R] /Count 1 >>endobj
+3 0 obj<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>endobj
+4 0 obj<< /Length 1726 >>stream
+BT /F1 11 Tf 50 780 Td (# CONRRAD - Institutional Governance) Tj
+0 -14 Td () Tj
+0 -14 Td (**Owner:** GRECOITALICO  ) Tj
+0 -14 Td (**Status:** Public enterprise surface) Tj
+0 -14 Td () Tj
+0 -14 Td (## What is CONRRAD?) Tj
+0 -14 Td () Tj
+0 -14 Td (CONRRAD allows an organization to delegate work to multiple AI systems while maintaining institutional control, evidence, and governance.) Tj
+0 -14 Td () Tj
+0 -14 Td (## Problem) Tj
+0 -14 Td () Tj
+0 -14 Td (Organizations can generate AI text, but cannot safely delegate real work across multiple AI systems without losing authority, evidence, or cost control.) Tj
+0 -14 Td () Tj
+0 -14 Td (## How CONRRAD solves it) Tj
+0 -14 Td () Tj
+0 -14 Td (Governance before execution:) Tj
+0 -14 Td (- **ANNY** - Operational Director and Deployment Authority) Tj
+0 -14 Td (- **HARLEMM** - Institutional Decision Authority) Tj
+0 -14 Td (- **SULLY** - Execution Worker and Infrastructure Executor) Tj
+0 -14 Td (- **Evidence** - sealed, auditable records) Tj
+0 -14 Td () Tj
+0 -14 Td (## Why it matters) Tj
+0 -14 Td () Tj
+0 -14 Td (Every institution that uses AI will need to delegate work without surrendering control. That layer becomes shared infrastructure.) Tj
+0 -14 Td () Tj
+0 -14 Td (## Institution Platform) Tj
+0 -14 Td () Tj
+0 -14 Td (Institution Platform is the enterprise destination for governed deployment.  ) Tj
+0 -14 Td (The public environment does not expose live cloud provision.) Tj
+0 -14 Td () Tj
+0 -14 Td (## Economics) Tj
+0 -14 Td () Tj
+0 -14 Td (Local SDK is free. agent.deploy\(\) is the enterprise pay boundary.) Tj
+0 -14 Td () Tj
+0 -14 Td (## Roadmap) Tj
+0 -14 Td () Tj
+0 -14 Td (Foundation -> Intelligence -> Laboratory -> Developer Platform -> Institution Platform) Tj
 ET
 endstream
 endobj
-5 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 3 0 R >> >> >>
-endobj
-6 0 obj
-<< /Length 1627 >>
-stream
-BT /F1 10 Tf 50 800 Td 12 TL
-() Tj
-T* ( 5. ANNY) Tj
-T* () Tj
-T* (ANNY is institutional identity. Across worker lanes:) Tj
-T* () Tj
-T* (GPT -> Cursor -> Antigravity -> Local -> GPT) Tj
-T* () Tj
-T* (structural identity remains continuous. The model may change; the institution must not.) Tj
-T* () Tj
-T* ( 6. HARLEMM) Tj
-T* () Tj
-T* (HARLEMM is a pure deterministic evaluator. It expands contracts, policies, and invariants and e) Tj
-T* (mits decisions.  ) Tj
-T* (It does not select LLMs and does not converse with humans.) Tj
-T* () Tj
-T* ( 7. SULLY) Tj
-T* () Tj
-T* (SULLY is the inference economy OS:) Tj
-T* () Tj
-T* (Difficulty -> Local RAM -> Local GPU -> Cursor -> Antigravity -> Response) Tj
-T* () Tj
-T* (GPU automation must not require human intervention when hardware exists.) Tj
-T* () Tj
-T* ( 8. Deterministic AI) Tj
-T* () Tj
-T* (CONRRAD separates:) Tj
-T* () Tj
-T* (- Deterministic work \(HARLEMM / Core\)) Tj
-T* (- InferenceRequired work \(SULLY\)) Tj
-T* () Tj
-T* (Determinism is the default. Inference is a controlled exception.) Tj
-T* () Tj
-T* ( 9. Economic Model) Tj
-T* () Tj
-T* (- Local SDK development is free) Tj
-T* (- agent.deploy\(\) is the monetization boundary) Tj
-T* (- Infrastructure \(Seal, Observatory, Economic Router\) remains closed) Tj
-T* () Tj
-T* ( 10. YC Positioning) Tj
-T* () Tj
-T* (CONRRAD is infrastructure for governed autonomous AI ? the control plane for agents that must s) Tj
-T* (urvive real work, audits, and cost pressure.) Tj
-T* () Tj
-T* ( 11. Competitive Advantage) Tj
-T* () Tj
-T* (| Others | CONRRAD |) Tj
-T* (|--------|---------|) Tj
-T* (| Chat wrappers | Institutional identity |) Tj
-ET
-endstream
-endobj
-7 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 3 0 R >> >> >>
-endobj
-8 0 obj
-<< /Length 535 >>
-stream
-BT /F1 10 Tf 50 800 Td 12 TL
-(| Prompt policies | Deterministic evaluator |) Tj
-T* (| One-vendor lock-in | Model-agnostic routing |) Tj
-T* (| Unmeasured RAG | Audited institutional memory |) Tj
-T* (| Demo theater | Evidence-first product |) Tj
-T* () Tj
-T* ( Links) Tj
-T* () Tj
-T* (- Docs: https://github.com/GRECOITALICO/CONRRAD-Docs) Tj
-T* (- SDK: https://github.com/GRECOITALICO/CONRRAD-SDK) Tj
-T* (- Website: https://github.com/GRECOITALICO/CONRRAD-Website) Tj
-T* (- Examples: https://github.com/GRECOITALICO/CONRRAD-Examples) Tj
-ET
-endstream
-endobj
-9 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 3 0 R >> >> >>
-endobj
+5 0 obj<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>endobj
 xref
-0 10
+0 6
 0000000000 65535 f 
 0000000009 00000 n 
-0000000058 00000 n 
-0000000127 00000 n 
-0000000197 00000 n 
-0000002052 00000 n 
-0000002178 00000 n 
-0000003857 00000 n 
-0000003983 00000 n 
-0000004569 00000 n 
-trailer
-<< /Size 10 /Root 1 0 R >>
+0000000056 00000 n 
+0000000111 00000 n 
+0000000235 00000 n 
+0000002011 00000 n 
+trailer<< /Size 6 /Root 1 0 R >>
 startxref
-4695
+2077
 %%EOF

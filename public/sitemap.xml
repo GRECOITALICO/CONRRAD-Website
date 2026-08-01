@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://conrrad.org/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/download/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/releases/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/install/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/verify/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/demo/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/atlas/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/atlas/status/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/documentation/</loc>
+  </url>
+  <url>
+    <loc>https://conrrad.org/whitepaper/</loc>
+  </url>
+</urlset>

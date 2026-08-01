@@ -1,61 +1,37 @@
-# CONRRAD — Institutional Governance Infrastructure
+# CONRRAD - Institutional Governance
 
-**Official Whitepaper v1.0 (Definitive)**  
 **Owner:** GRECOITALICO  
-**Date:** 2026-07-27  
-**Status:** Release Candidate product document
-
----
+**Status:** Public enterprise surface
 
 ## What is CONRRAD?
 
-CONRRAD is infrastructure for governed autonomous AI. It is not a chatbot, not a single-model wrapper, and not a meter-only wrapper. It provides institutional identity, deterministic governance, inference economy, measured memory, and append-only evidence.
+CONRRAD allows an organization to delegate work to multiple AI systems while maintaining institutional control, evidence, and governance.
 
-## What problem it solves
+## Problem
 
-Autonomous systems fail when identity drifts across LLMs, models invent policy, inference cost explodes, memory is folklore, and evidence is a screenshot. CONRRAD closes those gaps.
+Organizations can generate AI text, but cannot safely delegate real work across multiple AI systems without losing authority, evidence, or cost control.
 
-## Architecture
+## How CONRRAD solves it
 
-Human language is translated by HIT. HARLEMM governs deterministically. SULLY routes inference only when required. ANNY preserves identity. Institutional Memory stores measured vectors. Evidence Factory records hash-chained history.
+Governance before execution:
+- **ANNY** - Operational Director and Deployment Authority
+- **HARLEMM** - Institutional Decision Authority
+- **SULLY** - Execution Worker and Infrastructure Executor
+- **Evidence** - sealed, auditable records
 
-## ANNY
+## Why it matters
 
-Institutional identity continuity across GPT → Cursor → Antigravity → Local → GPT.
+Every institution that uses AI will need to delegate work without surrendering control. That layer becomes shared infrastructure.
 
-## HARLEMM
+## Institution Platform
 
-Pure evaluator. Contracts, policies, invariants → Decision. No LLM inside governance.
+Institution Platform is the enterprise destination for governed deployment.  
+The public environment does not expose live cloud provision.
 
-## SULLY
+## Economics
 
-Difficulty Classifier → Local RAM → Local GPU → Cursor → Antigravity → Fallback. GPU wake/sleep/idle are automatic.
-
-## Institutional Memory
-
-Qdrant collections with writers, payloads, indexes, and queries for ANNY, HARLEMM, SULLY, Evidence, and Knowledge Graph contexts.
-
-## Evidence Graph
-
-Append-only, SHA-256, replayable, DTO-linked timelines. Claims require evidence.
-
-## Knowledge Graph
-
-Typed nodes and relations across identity, governance, inference, memory, planner, dispatch, and workers.
-
-## Deterministic AI
-
-Deterministic by default. Inference is a controlled exception labeled InferenceRequired.
-
-## Cost Reduction
-
-Local-first routing, GPU automation without idle waste, and a free local SDK with deploy as the monetization boundary.
-
-## YC Demo
-
-1. Identity continuity 2. Governance boundaries 3. Inference economy 4. Measured memory 5. Evidence narrative
+Local birth package is free. agent.deploy() is the enterprise pay boundary.
 
 ## Roadmap
 
-RC 1.0 product family → public Docs/SDK/Website cutover → stable 1.0 after YC demo cycle.
-
+Foundation -> Intelligence -> Laboratory -> Developer Platform -> Institution Platform

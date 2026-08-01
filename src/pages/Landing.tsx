@@ -27,14 +27,20 @@ export default function Landing() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
-              to="/citizen"
+              to="/download/"
               className="bg-ink text-paper px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] hover:bg-accent"
+            >
+              Download Citizen
+            </Link>
+            <Link
+              to="/citizen"
+              className="border border-ink px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em]"
             >
               Citizen
             </Link>
             <a
               href="/demo/"
-              className="border border-ink px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em]"
+              className="border border-line px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] hover:border-ink"
             >
               Demo
             </a>
@@ -44,6 +50,45 @@ export default function Landing() {
             >
               Documentation
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-paper" id="download-citizen">
+        <div className="mx-auto max-w-5xl px-5 py-16 grid md:grid-cols-[200px_1fr] gap-10">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-mute">Download Citizen</p>
+          <div>
+            <h2 className="font-display text-2xl font-bold mb-4">Citizen Seed 0.1</h2>
+            <p className="text-mute leading-relaxed max-w-2xl mb-6">
+              Official public seed. One download experience — conrrad.org → Download → GitHub Release
+              → install.sh → Citizen Alive.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/download/"
+                className="bg-ink text-paper px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] hover:bg-accent"
+              >
+                Download Citizen
+              </Link>
+              <Link
+                to="/install/"
+                className="border border-ink px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em]"
+              >
+                Install
+              </Link>
+              <Link
+                to="/verify/"
+                className="border border-line px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] hover:border-ink"
+              >
+                Verify
+              </Link>
+              <Link
+                to="/releases/"
+                className="border border-line px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] hover:border-ink"
+              >
+                Releases
+              </Link>
+            </div>
           </div>
         </div>
       </section>

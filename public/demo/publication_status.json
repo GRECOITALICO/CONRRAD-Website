@@ -1,0 +1,18 @@
+{
+  "product": "CONRRAD Demonstration",
+  "published_at": "2026-07-31T14:53:32+00:00",
+  "route": "/demo/",
+  "canonical_url": "https://conrrad.org/demo/",
+  "assets": [
+    "/demo/index.html",
+    "/demo/demo.js",
+    "/demo/demo.css",
+    "/demo/atlas_demo.yaml",
+    "/demo/README.md"
+  ],
+  "scene_count": 8,
+  "consumes": [
+    "/atlas/atlas.json"
+  ],
+  "atlas_dependency_on_demo": false
+}

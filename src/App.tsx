@@ -13,8 +13,14 @@ import {
   ExecutiveBriefPage,
   ComingSoonDocPage,
 } from './pages/ProductPages'
-import { CitizenPage, TrustPage } from './pages/CanonPages'
 import { ChangelogPage, DonatePage } from './pages/AudiencePages'
+import { CitizenPage, TrustPage } from './pages/CanonPages'
+import {
+  DownloadPage,
+  ReleasesPage,
+  InstallPage,
+  VerifyPage,
+} from './pages/PublicReleasePages'
 
 function PublicLayout() {
   return (
@@ -68,6 +74,16 @@ export default function App() {
           <Route path="/executive-brief" element={<ExecutiveBriefPage />} />
           <Route path="/roadmap" element={<Roadmap />} />
 
+          {/* Citizen Seed public release — ONE URL each */}
+          <Route path="/download" element={<DownloadPage />} />
+          <Route path="/download/" element={<DownloadPage />} />
+          <Route path="/releases" element={<ReleasesPage />} />
+          <Route path="/releases/" element={<ReleasesPage />} />
+          <Route path="/install" element={<InstallPage />} />
+          <Route path="/install/" element={<InstallPage />} />
+          <Route path="/verify" element={<VerifyPage />} />
+          <Route path="/verify/" element={<VerifyPage />} />
+
           {/* Static products — hard redirect so SPA does not swallow filesystem */}
           <Route path="/demo" element={<HardRedirect to="/demo/" />} />
           <Route path="/yc-demo" element={<HardRedirect to="/demo/" />} />
@@ -91,7 +107,6 @@ export default function App() {
           <Route path="/investors" element={<Navigate to="/whitepaper" replace />} />
           <Route path="/developers" element={<Navigate to="/documentation" replace />} />
           <Route path="/developer" element={<Navigate to="/documentation" replace />} />
-          <Route path="/download" element={<Navigate to="/citizen#birth" replace />} />
           <Route path="/pricing" element={<Navigate to="/trust#economy" replace />} />
           <Route path="/technology" element={<Navigate to="/documentation" replace />} />
           <Route path="/technology/:id" element={<Navigate to="/documentation" replace />} />

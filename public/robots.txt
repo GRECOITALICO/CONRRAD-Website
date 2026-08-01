@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
-Sitemap: https://conrrad.org/
+
+# Canonical Demo / Atlas directory URLs (trailing slash)
+Allow: /demo/
+Allow: /atlas/
+
+Sitemap: https://conrrad.org/sitemap.xml

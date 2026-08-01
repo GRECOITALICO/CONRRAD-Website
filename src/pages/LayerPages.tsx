@@ -8,9 +8,15 @@ export function LayerHub({ layer }: { layer: Layer }) {
   const items = modulesByLayer(layer)
   return (
     <div className="mx-auto max-w-6xl px-5 py-14">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-mute mb-3">Digital twin</p>
+      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-mute mb-3">Platform</p>
       <h1 className="font-display text-4xl font-bold tracking-tight mb-3">{meta.title}</h1>
-      <p className="text-mute max-w-2xl mb-10 leading-relaxed">{meta.blurb}</p>
+      <p className="text-mute max-w-2xl mb-6 leading-relaxed">{meta.blurb}</p>
+      {layer === 'product' && (
+        <p className="text-mute max-w-2xl mb-10 leading-relaxed text-sm">
+          CONRRAD allows an organization to delegate work to multiple AI systems while maintaining
+          institutional control, evidence, and governance. Browse product modules below.
+        </p>
+      )}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((m) => (
           <ModuleCard key={m.id} m={m} base={`/${layer}`} />

@@ -1,17 +1,7 @@
 {
-  "status": "canon_v1_0",
+  "status": "enterprise_surface",
   "surface": "conrrad-website",
-  "principle": "website_canon_v1",
+  "principle": "capability_roadmap_public",
   "github_owner": "GRECOITALICO",
-  "primary_nav": [
-    "home",
-    "citizen",
-    "atlas",
-    "trust",
-    "demo",
-    "documentation",
-    "whitepaper",
-    "executive_brief"
-  ],
   "invented_metrics": false
 }
