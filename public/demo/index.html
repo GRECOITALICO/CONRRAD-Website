@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CONRRAD — Institutional Demonstration</title>
+  <meta name="description" content="CONRRAD business demonstration. Consumes the Atlas institutional twin." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/institutional-chrome.css" />
+  <link rel="canonical" href="https://conrrad.org/demo/" />
+  <link rel="stylesheet" href="/demo/demo.css" />
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<body class="has-eco-chrome eco-demo">
+  <header class="eco-chrome eco-chrome--dark" aria-label="CONRRAD institutional chrome">
+    <a class="eco-logo" href="https://conrrad.org/">
+      <img src="/icon-48.png" alt="" width="22" height="22" />
+      <span class="eco-wordmark">CONRRAD</span>
+    </a>
+    <nav class="eco-nav" aria-label="CONRRAD products">
+      <a href="https://conrrad.org/">Home</a>
+      <a href="https://conrrad.org/atlas/">Atlas</a>
+      <a href="https://conrrad.org/demo/" aria-current="page">Demo</a>
+    </nav>
+  </header>
+
+  <!-- Entry surface. Copy is applied from atlas_demo.yaml by applySpecChrome(). -->
+  <main id="demo-entry" class="demo-entry">
+    <div class="demo-entry-inner">
+      <p class="demo-entry-kicker">CONRRAD · Citizen</p>
+      <p class="demo-entry-entity">Institutional Digital Entity</p>
+      <h1 id="demo-entry-title">Institutional Demonstration</h1>
+      <p id="demo-thesis"></p>
+      <button type="button" id="btn-start-demo" class="btn-demo">▶ Start Institutional Demonstration</button>
+      <a class="demo-entry-link" href="/atlas/">Open the Atlas institutional twin</a>
+    </div>
+  </main>
+
+  <!--
+    INT-DEMO-UX-003 — vertical document architecture (CSS Grid zones):
+    Scene Header → Narrative → Canvas → Metrics → Evidence → Footer
+    IDs preserved for demo.js. No narrative/content changes.
+  -->
+  <section id="demo-stage" class="demo-stage" hidden aria-label="CONRRAD institutional demonstration" aria-live="polite">
+    <div class="demo-stage-inner">
+
+      <header class="demo-zone demo-zone--chrome">
+        <div class="demo-stage-head">
+          <div>
+            <p id="demo-kicker" class="demo-kicker">CONRRAD · Institutional Demonstration</p>
+            <h2 id="demo-brand" class="demo-brand">AI Only Where It Adds Value</h2>
+            <p class="demo-entity-line">Citizen = Institutional Digital Entity · Always alive</p>
+          </div>
+          <button type="button" id="demo-close" class="demo-close" aria-label="Close demonstration">Close</button>
+        </div>
+      </header>
+
+      <div class="demo-zone demo-zone--scene">
+        <div class="demo-scene-head">
+          <h3 id="demo-scene-title" class="demo-scene-title"></h3>
+          <p id="demo-scene-subtitle" class="demo-scene-subtitle"></p>
+        </div>
+      </div>
+
+      <div class="demo-zone demo-zone--narrative">
+        <div class="demo-message-block">
+          <p id="demo-message" class="demo-msg-main"></p>
+          <p id="demo-submessage" class="demo-msg-sub"></p>
+          <p id="demo-negative" class="demo-msg-negative" hidden></p>
+          <p id="demo-closing" class="demo-msg-closing" hidden></p>
+        </div>
+        <p id="demo-hero" class="demo-hero" hidden></p>
+        <p id="demo-note" class="demo-note" hidden></p>
+      </div>
+
+      <div class="demo-zone demo-zone--canvas">
+        <div id="demo-canvas" class="demo-canvas" role="img" aria-label="Scene visualization"></div>
+        <p id="demo-reveal" class="demo-reveal" hidden></p>
+      </div>
+
+      <div class="demo-zone demo-zone--metrics">
+        <div id="demo-metrics" class="demo-metrics" aria-live="polite"></div>
+      </div>
+
+      <div class="demo-zone demo-zone--evidence">
+        <div id="demo-pain" class="demo-pain"></div>
+        <div id="demo-triad" class="demo-triad"></div>
+      </div>
+
+      <footer class="demo-zone demo-zone--footer">
+        <div class="demo-stage-foot">
+          <div class="demo-progress"><span id="demo-progress-bar"></span></div>
+          <div id="demo-rail" class="demo-rail" aria-label="Scenes"></div>
+          <div class="demo-controls">
+            <button type="button" id="demo-prev">Previous</button>
+            <button type="button" id="demo-pause" aria-pressed="false">Pause</button>
+            <button type="button" id="demo-next">Next</button>
+            <button type="button" id="demo-replay">Replay</button>
+          </div>
+          <p id="demo-principal" class="demo-principal">CONRRAD uses AI only where the institution cannot answer by itself.</p>
+        </div>
+      </footer>
+
+    </div>
+  </section>
+
+  <script src="/demo/demo.js"></script>
+</body>
+</html>

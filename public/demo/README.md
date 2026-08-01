@@ -1,8 +1,6 @@
 # CONRRAD Demonstration
 
-Independent product. Consumer of Atlas. Served at `https://conrrad.org/demo/` (canonical; `/demo` → 301 → `/demo/`).
-
-Assets MUST use absolute paths: `/demo/demo.css`, `/demo/demo.js`, `/demo/atlas_demo.yaml`.
+Independent product. Consumer of Atlas. Served at `https://conrrad.org/demo`.
 
 ## Dependency direction
 
