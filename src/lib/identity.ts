@@ -8,22 +8,22 @@ export const FOUNDER = {
   x: 'https://x.com/conrradlab',
 }
 
-/** Public product surfaces — Canon v1.0 destinations. */
+/** Public product surfaces — Canon v1.0 destinations (Citizen-era). */
 export const PUBLIC_PRODUCT = {
-  /** Technical alias repo only — never marketed as the product noun. */
-  sdk: 'https://github.com/GRECOITALICO/CONRRAD-SDK',
   docsHome: '/documentation',
-  docsRepo: 'https://github.com/GRECOITALICO/CONRRAD-Docs',
   whitepaper: '/whitepaper',
-  whitepaperPdf: '/CONRRAD_INSTITUTIONAL_WHITEPAPER_v1.pdf',
-  whitepaperMd: '/CONRRAD_INSTITUTIONAL_WHITEPAPER_v1.md',
+  /** Certified Citizen-era whitepaper (exact copy of CONRRAD/docs/public/Whitepaper.md). */
+  whitepaperMd: '/docs/Whitepaper.md',
+  executiveBrief: '/executive-brief',
+  executiveBriefMd: '/docs/Executive_Brief.md',
   evidence: '/trust#evidence',
   architecture: '/citizen#architecture',
   citizen: '/citizen',
   trust: '/trust',
   atlas: '/atlas/',
   demo: '/demo/',
-  examples: 'https://github.com/GRECOITALICO/CONRRAD-Examples',
+  glossary: '/documentation/glossary',
+  faq: '/documentation/faq',
 } as const
 
 export const SOCIALS = [

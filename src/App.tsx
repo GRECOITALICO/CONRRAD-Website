@@ -7,9 +7,14 @@ import AppShell from './pages/AppShell'
 import AppOverview from './pages/AppOverview'
 import Roadmap from './pages/Roadmap'
 import SurfacePage from './pages/SurfacePage'
-import { DocumentationPage, WhitepaperPage } from './pages/ProductPages'
+import {
+  DocumentationPage,
+  WhitepaperPage,
+  ExecutiveBriefPage,
+  ComingSoonDocPage,
+} from './pages/ProductPages'
 import { CitizenPage, TrustPage } from './pages/CanonPages'
-import { ChangelogPage, DonatePage, FaqPage } from './pages/AudiencePages'
+import { ChangelogPage, DonatePage } from './pages/AudiencePages'
 
 function PublicLayout() {
   return (
@@ -51,7 +56,16 @@ export default function App() {
           <Route path="/citizen" element={<CitizenPage />} />
           <Route path="/trust" element={<TrustPage />} />
           <Route path="/documentation" element={<DocumentationPage />} />
+          <Route path="/documentation/citizen-book" element={<ComingSoonDocPage title="Citizen Book" />} />
+          <Route path="/documentation/atlas-book" element={<ComingSoonDocPage title="Atlas Book" />} />
+          <Route
+            path="/documentation/observatory-guide"
+            element={<ComingSoonDocPage title="Observatory Guide" />}
+          />
+          <Route path="/documentation/glossary" element={<ComingSoonDocPage title="Glossary" />} />
+          <Route path="/documentation/faq" element={<ComingSoonDocPage title="FAQ" />} />
           <Route path="/whitepaper" element={<WhitepaperPage />} />
+          <Route path="/executive-brief" element={<ExecutiveBriefPage />} />
           <Route path="/roadmap" element={<Roadmap />} />
 
           {/* Static products — hard redirect so SPA does not swallow filesystem */}
@@ -62,7 +76,12 @@ export default function App() {
 
           {/* MERGE → REDIRECT */}
           <Route path="/architecture" element={<Navigate to="/citizen#architecture" replace />} />
-          <Route path="/sdk" element={<Navigate to="/citizen#birth" replace />} />
+          <Route path="/sdk" element={<Navigate to="/documentation" replace />} />
+          <Route path="/marketplace" element={<Navigate to="/documentation" replace />} />
+          <Route path="/agent" element={<Navigate to="/citizen" replace />} />
+          <Route path="/agents" element={<Navigate to="/citizen" replace />} />
+          <Route path="/runtime" element={<Navigate to="/trust" replace />} />
+          <Route path="/framework" element={<Navigate to="/documentation" replace />} />
           <Route path="/evidence" element={<Navigate to="/trust#evidence" replace />} />
           <Route path="/status" element={<Navigate to="/trust" replace />} />
           <Route path="/economic-model" element={<Navigate to="/trust#economy" replace />} />
@@ -71,8 +90,9 @@ export default function App() {
           <Route path="/about" element={<Navigate to="/" replace />} />
           <Route path="/investors" element={<Navigate to="/whitepaper" replace />} />
           <Route path="/developers" element={<Navigate to="/documentation" replace />} />
-          <Route path="/download" element={<Navigate to="/documentation#get" replace />} />
-          <Route path="/pricing" element={<Navigate to="/documentation#get" replace />} />
+          <Route path="/developer" element={<Navigate to="/documentation" replace />} />
+          <Route path="/download" element={<Navigate to="/citizen#birth" replace />} />
+          <Route path="/pricing" element={<Navigate to="/trust#economy" replace />} />
           <Route path="/technology" element={<Navigate to="/documentation" replace />} />
           <Route path="/technology/:id" element={<Navigate to="/documentation" replace />} />
           <Route path="/product" element={<Navigate to="/documentation" replace />} />
@@ -85,10 +105,21 @@ export default function App() {
           <Route path="/docs" element={<Navigate to="/documentation" replace />} />
           <Route path="/whitepapers" element={<Navigate to="/whitepaper" replace />} />
           <Route path="/blog" element={<Navigate to="/changelog" replace />} />
+          <Route path="/glossary" element={<Navigate to="/documentation/glossary" replace />} />
+          <Route path="/faq" element={<Navigate to="/documentation/faq" replace />} />
+          <Route path="/citizen-book" element={<Navigate to="/documentation/citizen-book" replace />} />
+          <Route path="/atlas-book" element={<Navigate to="/documentation/atlas-book" replace />} />
+          <Route
+            path="/observatory"
+            element={<Navigate to="/documentation/observatory-guide" replace />}
+          />
+          <Route
+            path="/observatory-guide"
+            element={<Navigate to="/documentation/observatory-guide" replace />}
+          />
 
-          {/* Utility KEEP */}
+          {/* Utility KEEP (not primary nav; Donate not a product CTA) */}
           <Route path="/login" element={<Login />} />
-          <Route path="/faq" element={<FaqPage />} />
           <Route path="/changelog" element={<ChangelogPage />} />
           <Route path="/donate" element={<DonatePage />} />
 

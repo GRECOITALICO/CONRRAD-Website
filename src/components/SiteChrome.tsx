@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FOUNDER, SOCIALS } from '../lib/identity'
 import { Wordmark } from './Wordmark'
 
-/** Website Canon v1.0 — primary nav (exactly 8). Demo/Atlas are static products. */
+/** Primary public nav (exactly 8). Demo/Atlas are static products. */
 const PRIMARY: { to: string; label: string; external?: boolean }[] = [
   { to: '/', label: 'Home' },
   { to: '/citizen', label: 'Citizen' },
@@ -12,7 +12,7 @@ const PRIMARY: { to: string; label: string; external?: boolean }[] = [
   { to: '/demo/', label: 'Demo', external: true },
   { to: '/documentation', label: 'Documentation' },
   { to: '/whitepaper', label: 'Whitepaper' },
-  { to: '/roadmap', label: 'Roadmap' },
+  { to: '/executive-brief', label: 'Executive Brief' },
 ]
 
 function NavLink({
@@ -143,18 +143,13 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/executive-brief" className="hover:text-accent">
+                Executive Brief
+              </Link>
+            </li>
+            <li>
               <Link to="/whitepaper" className="hover:text-accent">
                 Whitepaper
-              </Link>
-            </li>
-            <li>
-              <Link to="/roadmap" className="hover:text-accent">
-                Roadmap
-              </Link>
-            </li>
-            <li>
-              <Link to="/faq" className="hover:text-accent">
-                FAQ
               </Link>
             </li>
           </ul>
@@ -173,8 +168,8 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link to="/donate" className="hover:text-accent">
-                Sustainability
+              <Link to="/roadmap" className="hover:text-accent">
+                Roadmap
               </Link>
             </li>
             <li>

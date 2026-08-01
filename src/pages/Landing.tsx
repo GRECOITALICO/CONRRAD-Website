@@ -98,11 +98,11 @@ export default function Landing() {
             <Link to="/documentation" className="text-accent">
               Documentation →
             </Link>
+            <Link to="/executive-brief" className="text-accent">
+              Executive Brief →
+            </Link>
             <Link to="/whitepaper" className="text-accent">
               Whitepaper →
-            </Link>
-            <Link to="/roadmap" className="text-accent">
-              Roadmap →
             </Link>
           </div>
         </div>

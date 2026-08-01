@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FOUNDER, PUBLIC_PRODUCT } from '../lib/identity'
+import { FOUNDER } from '../lib/identity'
 
 /** Public evidence board — honest, partially static until automation lands. */
 export default function EvidencePage() {
@@ -8,11 +8,10 @@ export default function EvidencePage() {
     { k: 'Last known deploy', v: 'Vercel project conrrad/conrrad-website · Production', s: 'live' },
     { k: 'Runtime health', v: 'runtime.conrrad.org/__ppe/health', s: 'preview', href: 'https://runtime.conrrad.org/__ppe/health' },
     { k: 'Scheduler / Freeze C0', v: 'Planning contract frozen · board render deterministic', s: 'certified' },
-    { k: 'CI', v: 'Public SDK workflows — see GitHub Actions', s: 'partial', href: PUBLIC_PRODUCT.sdk },
-    { k: 'Documentation', v: 'Official docs surface (CONRRAD-Docs staging)', s: 'live', href: PUBLIC_PRODUCT.docsHome },
-    { k: 'SDK', v: 'Public conrrad-sdk', s: 'live', href: PUBLIC_PRODUCT.sdk },
+    { k: 'Documentation', v: 'Official Citizen-era docs index', s: 'live', href: '/documentation' },
+    { k: 'Executive Brief', v: 'Certified brief', s: 'live', href: '/executive-brief' },
+    { k: 'Whitepaper', v: 'Certified whitepaper', s: 'live', href: '/whitepaper' },
     { k: 'Last certification posture', v: 'TESTLAB evidence packs · Founder gates pending where noted', s: 'partial' },
-    { k: 'Last commit (public)', v: 'Follow public SDK default branch — not mirrored live yet', s: 'planned' },
   ]
 
   return (
@@ -29,7 +28,11 @@ export default function EvidencePage() {
             <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-mute w-40 shrink-0">{r.k}</p>
             <div className="flex-1">
               {r.href ? (
-                <a href={r.href} target="_blank" rel="noreferrer" className="text-sm text-accent hover:underline">
+                <a
+                  href={r.href}
+                  {...(r.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
+                  className="text-sm text-accent hover:underline"
+                >
                   {r.v}
                 </a>
               ) : (
@@ -40,18 +43,14 @@ export default function EvidencePage() {
           </div>
         ))}
       </div>
-      <p className="mt-8 text-xs text-mute">
-        Related:{' '}
-        <Link to="/product/evidence" className="text-accent hover:underline">
-          Evidence product module
+      <p className="mt-10 text-xs text-mute">
+        Founder {FOUNDER.displayName}. Related:{' '}
+        <Link to="/trust" className="text-accent hover:underline">
+          Trust
         </Link>
         {' · '}
-        <Link to="/technology/evidence-system" className="text-accent hover:underline">
-          Evidence system
-        </Link>
-        {' · '}
-        <Link to="/status" className="text-accent hover:underline">
-          Status ledger
+        <Link to="/documentation" className="text-accent hover:underline">
+          Documentation
         </Link>
       </p>
     </div>

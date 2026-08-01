@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { PUBLIC_PRODUCT } from '../lib/identity'
 import { useHashScroll } from '../components/HardRedirect'
+import CertifiedDocPage from './CertifiedDoc'
 
 function Page({ title, kicker, children }: { title: string; kicker: string; children: React.ReactNode }) {
   useHashScroll()
@@ -13,86 +13,93 @@ function Page({ title, kicker, children }: { title: string; kicker: string; chil
   )
 }
 
-function Ext({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a href={href} target="_blank" rel="noreferrer" className="text-accent hover:underline">
-      {children}
-    </a>
-  )
-}
+const CERTIFIED = [
+  { to: '/executive-brief', label: 'Executive Brief', md: '/docs/Executive_Brief.md' },
+  { to: '/whitepaper', label: 'Whitepaper', md: '/docs/Whitepaper.md' },
+] as const
 
-export function DocumentationPage() {
-  return (
-    <Page title="Documentation" kicker="Official">
-      <p>
-        Official documentation is published from CONRRAD-Docs. This website is not a second SSOT —
-        it orients the first visitor and points to depth.
-      </p>
-      <p>
-        <Ext href={PUBLIC_PRODUCT.docsRepo}>Open CONRRAD-Docs</Ext>
-      </p>
-      <ul className="list-disc pl-5 space-y-1">
-        <li>Citizen · Birth · Directive · Evolution</li>
-        <li>Trust · Evidence · Atlas · Governance</li>
-        <li>Deployment · API · Examples</li>
-      </ul>
+/** Public doc slots without a certified body under docs/public/ — route only, no invented content. */
+const COMING_SOON = [
+  { to: '/documentation/citizen-book', label: 'Citizen Book' },
+  { to: '/documentation/atlas-book', label: 'Atlas Book' },
+  { to: '/documentation/observatory-guide', label: 'Observatory Guide' },
+  { to: '/documentation/glossary', label: 'Glossary' },
+  { to: '/documentation/faq', label: 'FAQ' },
+] as const
 
-      <h2 id="get" className="font-display text-xl font-bold text-ink pt-8 scroll-mt-20">
-        Get · Birth package
-      </h2>
+/** Placeholder for titles not yet certified — no body authored. */
+export function ComingSoonDocPage({ title }: { title: string }) {
+  return (
+    <Page title={title} kicker="Official · Coming soon">
+      <p className="text-ink font-semibold text-lg">Coming soon</p>
       <p>
-        Birth is one-time. The public Birth package repository is a technical alias for install — not
-        the product name.
-      </p>
-      <pre className="bg-white border border-line p-4 text-xs font-mono text-ink overflow-x-auto">{`pip install conrrad-sdk
-conrrad new hello
-cd hello
-conrrad run`}</pre>
-      <p>
-        <Ext href={PUBLIC_PRODUCT.sdk}>Birth package · CONRRAD-SDK</Ext>
-        {' · '}
-        <Ext href="https://github.com/GRECOITALICO/CONRRAD-Examples">Examples</Ext>
-        {' · '}
-        <a href={PUBLIC_PRODUCT.whitepaperPdf} className="text-accent hover:underline">
-          Whitepaper PDF
-        </a>
+        This document is not yet available from a certified public source. No content is published
+        on this page.
       </p>
       <p className="pt-4">
-        <Link className="text-accent hover:underline" to="/citizen#birth">
-          Citizen · Birth
+        <Link className="text-accent hover:underline" to="/documentation">
+          Documentation index
         </Link>
         {' · '}
-        <Link className="text-accent hover:underline" to="/trust">
-          Trust
+        <Link className="text-accent hover:underline" to="/executive-brief">
+          Executive Brief
+        </Link>
+        {' · '}
+        <Link className="text-accent hover:underline" to="/whitepaper">
+          Whitepaper
         </Link>
       </p>
     </Page>
   )
 }
 
-export function WhitepaperPage() {
+/** Official documentation index — Citizen-era certified docs + Coming soon slots. */
+export function DocumentationPage() {
   return (
-    <Page title="Whitepaper" kicker="Official">
+    <Page title="Documentation" kicker="Official">
       <p>
-        CONRRAD Institutional Governance Infrastructure — definitive institutional whitepaper. Covers
-        the problem, Citizen architecture, governance, institutional memory, evidence, and economic
-        boundary.
+        Official Citizen-era documentation is published from certified sources under{' '}
+        <code className="text-ink">docs/public/</code>. This index is the public entry point.
       </p>
-      <div className="flex flex-wrap gap-3 pt-2">
-        <a
-          href={PUBLIC_PRODUCT.whitepaperPdf}
-          className="bg-ink text-paper px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em]"
-        >
-          Download PDF
-        </a>
-        <a
-          href={PUBLIC_PRODUCT.whitepaperMd}
-          className="border border-ink px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em]"
-        >
-          Read Markdown
-        </a>
-        <Ext href="https://github.com/GRECOITALICO/CONRRAD-Whitepaper">Repository</Ext>
-      </div>
+
+      <h2 id="published" className="font-display text-xl font-bold text-ink pt-8 scroll-mt-20">
+        Published (certified)
+      </h2>
+      <ul className="list-disc pl-5 space-y-2">
+        {CERTIFIED.map((d) => (
+          <li key={d.to}>
+            <Link className="text-accent hover:underline" to={d.to}>
+              {d.label}
+            </Link>
+            {' · '}
+            <a className="text-accent hover:underline" href={d.md}>
+              Markdown
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <h2 id="coming-soon" className="font-display text-xl font-bold text-ink pt-8 scroll-mt-20">
+        Coming soon
+      </h2>
+      <ul className="list-disc pl-5 space-y-2">
+        {COMING_SOON.map((d) => (
+          <li key={d.to}>
+            <Link className="text-accent hover:underline" to={d.to}>
+              {d.label}
+            </Link>
+            <span className="text-mute"> — Coming soon</span>
+          </li>
+        ))}
+      </ul>
+
+      <h2 id="get" className="font-display text-xl font-bold text-ink pt-8 scroll-mt-20">
+        Get started
+      </h2>
+      <p>
+        Birth is one-time. Read the Citizen page for product definition. Technical birth-alias package
+        names are not the product noun and are not linked from this portal.
+      </p>
       <p className="pt-4">
         <Link className="text-accent hover:underline" to="/citizen">
           Citizen
@@ -101,7 +108,35 @@ export function WhitepaperPage() {
         <Link className="text-accent hover:underline" to="/trust">
           Trust
         </Link>
+        {' · '}
+        <Link className="text-accent hover:underline" to="/executive-brief">
+          Executive Brief
+        </Link>
+        {' · '}
+        <Link className="text-accent hover:underline" to="/whitepaper">
+          Whitepaper
+        </Link>
       </p>
     </Page>
+  )
+}
+
+export function WhitepaperPage() {
+  return (
+    <CertifiedDocPage
+      title="Whitepaper"
+      kicker="Official · Certified"
+      src="/docs/Whitepaper.md"
+    />
+  )
+}
+
+export function ExecutiveBriefPage() {
+  return (
+    <CertifiedDocPage
+      title="Executive Brief"
+      kicker="Official · Certified"
+      src="/docs/Executive_Brief.md"
+    />
   )
 }

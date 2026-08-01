@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { PUBLIC_PRODUCT } from '../lib/identity'
 import { useHashScroll } from '../components/HardRedirect'
 
 function Page({
@@ -69,13 +68,17 @@ export function CitizenPage() {
       </p>
       <p>
         Get started:{' '}
-        <Link className="text-accent hover:underline" to="/documentation#get">
-          Documentation · Get
+        <Link className="text-accent hover:underline" to="/documentation">
+          Documentation
         </Link>
         {' · '}
-        <a className="text-accent hover:underline" href={PUBLIC_PRODUCT.sdk} target="_blank" rel="noreferrer">
-          Birth package repository
-        </a>
+        <Link className="text-accent hover:underline" to="/executive-brief">
+          Executive Brief
+        </Link>
+        {' · '}
+        <Link className="text-accent hover:underline" to="/whitepaper">
+          Whitepaper
+        </Link>
       </p>
 
       <h2 id="directive" className="font-display text-xl font-bold text-ink pt-6 scroll-mt-20">
@@ -111,9 +114,9 @@ export function CitizenPage() {
     → Evidence (SHA-256 append-only)`}</pre>
       <p>
         Deep dive:{' '}
-        <a className="text-accent hover:underline" href={PUBLIC_PRODUCT.docsRepo} target="_blank" rel="noreferrer">
-          CONRRAD-Docs
-        </a>
+        <Link className="text-accent hover:underline" to="/documentation">
+          Documentation
+        </Link>
         {' · '}
         <Link className="text-accent hover:underline" to="/trust">
           Trust
@@ -143,8 +146,9 @@ export function TrustPage() {
       s: 'preview',
       href: 'https://runtime.conrrad.org/__ppe/health',
     },
-    { k: 'Documentation', v: 'Official docs surface', s: 'live', href: PUBLIC_PRODUCT.docsHome },
-    { k: 'Whitepaper', v: 'Institutional narrative', s: 'live', href: '/whitepaper' },
+    { k: 'Documentation', v: 'Official docs surface', s: 'live', href: '/documentation' },
+    { k: 'Executive Brief', v: 'Certified brief', s: 'live', href: '/executive-brief' },
+    { k: 'Whitepaper', v: 'Certified institutional whitepaper', s: 'live', href: '/whitepaper' },
     { k: 'Evidence posture', v: 'Append-only · hash-addressed · replayable (institutional)', s: 'partial' },
     { k: 'Economic boundary', v: 'Local Birth free · cloud deploy is the Pay boundary (CAS-4)', s: 'live' },
   ]
@@ -212,6 +216,10 @@ export function TrustPage() {
         {' · '}
         <Link to="/whitepaper" className="text-accent hover:underline">
           Whitepaper
+        </Link>
+        {' · '}
+        <Link to="/executive-brief" className="text-accent hover:underline">
+          Executive Brief
         </Link>
       </p>
     </div>

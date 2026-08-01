@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ROADMAP, STATUS_LABEL, SURFACES, mvpProgressPct } from '../lib/productCatalog'
 import { readGuestSession } from '../lib/identity'
 
-const TILE_IDS = ['execution', 'projects', 'packages', 'evidence', 'agents', 'marketplace'] as const
+const TILE_IDS = ['execution', 'projects', 'packages', 'evidence'] as const
 
 const CHANGELOG = [
   {

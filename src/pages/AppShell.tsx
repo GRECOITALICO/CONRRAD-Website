@@ -10,7 +10,6 @@ const NAV = [
   { to: '/app/certificates', label: 'Certificates' },
   { to: '/app/agents', label: 'Agents' },
   { to: '/app/memory', label: 'Memory' },
-  { to: '/app/marketplace', label: 'Marketplace' },
   { to: '/app/deploy', label: 'Deploy' },
   { to: '/app/logs', label: 'Logs' },
   { to: '/app/settings', label: 'Settings' },

@@ -253,18 +253,14 @@ export function InvestorsPage() {
 
 export function DevelopersPage() {
   const links = [
-    { t: 'Architecture', d: 'CAS-1 · Lab vs Infra · ADR-058', href: '/technology/architecture', ext: false },
-    { t: 'Modules', d: 'Full twin catalog', href: '/twin', ext: false },
-    { t: 'Packages', d: 'Execution package model', href: '/product/packages', ext: false },
-    { t: 'Repositories', d: 'CONRRAD + SDK', href: 'https://github.com/GRECOITALICO', ext: true },
-    { t: 'Runtime', d: 'Health on Node-01', href: 'https://runtime.conrrad.org/__ppe/health', ext: true },
-    { t: 'Evidence', d: 'Public evidence board', href: '/evidence', ext: false },
-    { t: 'ADRs', d: 'Decision records', href: '/technology/adrs', ext: false },
-    { t: 'API', d: 'Early Access', href: '/technology/apis', ext: false },
-    { t: 'SDK', d: 'Open core · local free', href: 'https://github.com/GRECOITALICO/CONRRAD-SDK', ext: true },
-    { t: 'CLI', d: 'Developer CLI status', href: '/ecosystem/cli', ext: false },
+    { t: 'Citizen', d: 'Product definition', href: '/citizen', ext: false },
+    { t: 'Documentation', d: 'Certified docs index', href: '/documentation', ext: false },
+    { t: 'Executive Brief', d: 'Certified brief', href: '/executive-brief', ext: false },
+    { t: 'Whitepaper', d: 'Certified whitepaper', href: '/whitepaper', ext: false },
+    { t: 'Repositories', d: 'GRECOITALICO org', href: 'https://github.com/GRECOITALICO', ext: true },
+    { t: 'Host health', d: 'Node-01 health path', href: 'https://runtime.conrrad.org/__ppe/health', ext: true },
+    { t: 'Trust', d: 'Evidence board', href: '/trust', ext: false },
     { t: 'Roadmap', d: 'Product trains', href: '/roadmap', ext: false },
-    { t: 'Contribute', d: 'GitHub issues / PRs', href: 'https://github.com/GRECOITALICO/CONRRAD-SDK', ext: true },
   ]
   return (
     <div className="mx-auto max-w-6xl px-5 py-14">
