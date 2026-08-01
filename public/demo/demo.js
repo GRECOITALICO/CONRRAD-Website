@@ -13,7 +13,7 @@
 (function () {
   "use strict";
 
-  var SPEC_URL = "atlas_demo.yaml";
+  var SPEC_URL = "/demo/atlas_demo.yaml";
   // Atlas public contract: the published institutional model.
   var ATLAS_MODEL_URL = "/atlas/atlas.json";
 
